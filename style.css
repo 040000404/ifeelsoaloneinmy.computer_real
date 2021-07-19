@@ -930,7 +930,7 @@ input:checked + .slider:before {
 
 #ending{
 	box-shadow: 0 0 5px 5px /*RGB(250, 249, 252)*/ #050012 inset;
-	overflow-y: auto;
+	overflow-y: hidden;
 	border: 1px solid #222;
  	padding:  0vw; 
 	backdrop-filter: blur(5px);

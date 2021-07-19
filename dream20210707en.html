@@ -77,7 +77,7 @@
 
 	//lamp
 	var toggle = false;
-	$('#lamp').click(function(){
+	$('.switch').click(function(){
 
 		toggle = !toggle;
 
@@ -100,7 +100,12 @@
 		}	
 
 	});
-  
+  window.onpageshow = function(event) {
+    if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+    var chk = $("input").is(":checked");
+    if(chk) {$("input").prop("checked", false).attr("checked", false).removeAttr("checked");}
+    }
+  };
   	//random sentences
   var subject = [
   'you',

@@ -98,14 +98,20 @@
       $("#main_en").toggleClass('nightlang',1000);
 		}
 		else{
-			$('.content').toggleClass('day',1000);
+      $('input:checkbox').removeAttr('checked');
+			$('.content').toggleClass('day',1000); 
 			$('#lamp').toggleClass('daylamp',1000);
 			$('#die').toggleClass('daybutton',1000);
 			$("#mags").toggleClass('dayimage',1000);
-      $("#main_en").toggleClass('daylang',1000);
+      $("#main_en").toggleClass('daylang',1000); 
 		}	
 	});
-  
+  window.onpageshow = function(event) {
+    if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+    var chk = $("input").is(":checked");
+    if(chk) {$("input").prop("checked", false).attr("checked", false).removeAttr("checked");}
+    }
+};
 
 var content = "";
 for(i=0;i<100;i++){
