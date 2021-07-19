@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="tabledragger.min.js"> </script>
+
+ 
+</head>
+<body>
+  <layer>
+  <default>
+    <div class="content day">
+      <div id="lamp" class="daylamp">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+      </div>
+       
+      
+      <div id='mags' class="dayimage"> 
+        <div class="item item_edges item_edges2"></div>
+        <div class="item item_edges2" id="dream" title="dream" onclick='location.href = "dream20210707.html";'></div>
+        <div class="item item_edges2" id="room" title="room" onclick='location.href = "room.html";'></div>
+        
+        <div class="item item_edges" id="hint" title="hint" onclick='location.href = "hint.html";'></div>
+        <div class="item" id="stage">
+          <div id="sentence">
+            
+          </div>
+          <div id="column_index" class="puzzle_index">
+            <span>ㄱ</span>
+            <span>ㄴ</span>
+            <span>ㄷ</span>
+            <span>ㄹ</span>
+            <span>ㅁ</span>
+            <span>ㅂ</span>
+            <span>ㅅ</span>
+            <span>ㅇ</span>
+            <span>ㅈ</span>
+            <span>ㅊ</span>
+          </div>
+        </div>
+        <div class="item"></div>
+
+        <div class="item item_edges" id="row_index_grid">
+          <div id="row_index" class="puzzle_index">
+            <span>a</span>
+            <span>b</span>
+            <span>c</span>
+            <span>d</span>
+            <span>e</span>
+            <span>f</span>
+            <span>g</span>
+            <span>h</span>
+            <span>i</span>
+            <span>j</span>
+          </div>
+        </div>
+        <div class="item" id="text_puzzle" title="puzzle">
+          
+        </div>
+        <div class="item" id="end" title="end" onclick='location.href = "end.html";'></div>
+        <div class=" item_edges item_edges3"></div>
+        <div class="item_edges3"></div>
+        <div class="item"></div>
+      </div> 
+        </div>
+        <div  id="main_lang">
+   <button id="main_ko" class="daylang"type="button" onclick="location.href='main.html'"> </button> 
+  </div> 
+      </default>
+
+    </layer>
+ <script>  
+  $(document).ready(function() {
+    $('input:checkbox').removeAttr('checked');
+  });
+
+  //lamp
+  var toggle = false;
+  $('.switch').click(function(){
+
+    toggle = !toggle;
+
+    if(toggle){
+      $('.content').toggleClass('night',1000);
+      $('#lamp').toggleClass('nightlamp',1000);
+      $('#die').toggleClass('nightbutton',1000); 
+      $('.slider').toggleClass('nightswitch',1000); 
+      $('layer').toggleClass('nightshift',1000);
+      $('default').toggleClass('nightbox',1000);
+      $("#mags").toggleClass('nightimage',1000);
+      $("#main_en").toggleClass('nightlang',1000);
+    }
+    else{
+      $('.content').toggleClass('day',1000);
+      $('#lamp').toggleClass('daylamp',1000);
+      $('#die').toggleClass('daybutton',1000);
+      $("#mags").toggleClass('dayimage',1000);
+      $("#main_en").toggleClass('daylang',1000);
+    } 
+  });
+  
+
+var content = "";
+for(i=0;i<100;i++){
+  var j = parseInt(i+1); 
+  content += '<div id="' + j + '"class="puzzle_piece">'+'</div>'; 
+} ;
+$('#text_puzzle').append(content);
+
+
+//sort #text_puzzle grid
+
+function sortable(section, onUpdate){
+    var dragEl, nextEl, newPos, dragGhost;
+ 
+    let oldPos = [...section.children].map(item => {
+      item.draggable = true
+      let pos = document.getElementById(item.id).getBoundingClientRect();
+      return pos;
+    });
+   
+    function _onDragOver(e){
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        
+        var target = e.target;
+        if( target && target !== dragEl && target.nodeName == 'DIV' ){
+          if(target.classList.contains('inside')) {
+            e.stopPropagation();
+          } else {
+      //getBoundinClientRect contains location-info about the element (relative to the viewport)
+          var targetPos = target.getBoundingClientRect();
+           //checking that dragEl is dragged over half the target y-axis or x-axis. (therefor the .5)
+          var next = (e.clientY - targetPos.top) / (targetPos.bottom - targetPos.top) > .5 || (e.clientX - targetPos.left) / (targetPos.right - targetPos.left) > .5;    
+            section.insertBefore(dragEl, next && target.nextSibling || target);
+             
+            /*  console.log("oldPos:" + JSON.stringify(oldPos));
+             console.log("newPos:" + JSON.stringify(newPos)); */
+             /* console.log(newPos.top === oldPos.top ? 'They are the same' : 'Not the same'); */
+             }
+        }   
+    }
+    
+    function _onDragEnd(evt){
+        evt.preventDefault();
+        newPos = [...section.children].map(child => {      
+             let pos = document.getElementById(child.id).getBoundingClientRect();
+             return pos;
+           });
+        console.log(newPos);
+        dragEl.classList.remove('ghost');
+        section.removeEventListener('dragover', _onDragOver, false);
+        section.removeEventListener('dragend', _onDragEnd, false);
+
+        nextEl !== dragEl.nextSibling ? onUpdate(dragEl) : false;
+    }
+       
+      section.addEventListener('dragstart', function(e){     
+        dragEl = e.target; 
+        nextEl = dragEl.nextSibling;
+        /* dragGhost = dragEl.cloneNode(true);
+        dragGhost.classList.add('hidden-drag-ghost'); */
+        
+       /*  document.body.appendChild(dragGhost);
+        e.dataTransfer.setDragImage(dragGhost, 0, 0); */
+    
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('Text', dragEl.textContent);
+      
+        section.addEventListener('dragover', _onDragOver, false);
+        section.addEventListener('dragend', _onDragEnd, false);
+         
+        setTimeout(function (){
+            dragEl.classList.add('ghost');
+        }, 0)
+       
+    }); 
+    }
+                                          
+sortable( document.getElementById('text_puzzle'), function (item){
+    /* console.log(item); */
+});
+
+var sentences = [
+  'avoidance response to the smother and efforts for my sincere replies to you',
+  '',
+  'the best part about writing a dream journal is the cutting and pasting of sentences that did not happen in my dreams',  
+  '',
+  '',
+    '',
+    '',
+    '',
+    '',
+    'dreams fade quickly, so reading it after a few days, you cannot tell which part is real dream or lie.',   
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '' ,
+    'thus the journal is neither a dream nor reality, but a description of the third scene.',   
+    'slicing up lies to put between pages.',   
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    'the other important thing than writing dream journals is replying to you.',  
+    '1. shower when everyone else is asleep, then put on perfume.',  
+    '2. leave the house immediately (hair has to be still wet)',
+    '3. bench by the patrol, then turn on phone.',
+    '',
+    '',
+    '',
+    '',
+    '' ,
+    'the procedure is an illusion makes me feel like, i am vacationing by the beach having taken a shower after swimming and then walking around the place still dripping wet.',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+
+    'sleeping, longing for familial togetherness and avoiding it completely, visiting every last stop of the buses that stops by the house.',
+'as I became more afraid of the smother, I had to sleep more.',
+ 'I slept when I couldn’t sleep.',
+ '',
+    '',
+    '',
+    '',
+    '' ,
+'I called for sleep even when I was full so I could feel the food lying in-line with me.',
+'I slept day and night.',
+'',
+    '',
+    '',
+    '',
+    '',
+    '',
+'slept for more than 14 hours.',
+'',
+    '',
+    '',
+    '',
+    '',
+    '',
+'lay to sleep.',
+'I feel no longer guilty about sleeping so much, after realizing that I never have allergic reactions to the smother in sleep.',
+'',
+    '',
+    '',
+    '',
+    '',
+    '',
+'there is no need to try to be alone in dreams.',
+'',
+    '',
+    '',
+    '',
+    '',
+    '' ,
+    '',
+    '',
+    '',
+    '',
+    '' ,
+    '',
+    '',
+    '',
+    '',
+    '' 
+];
+     console.log(sentences.length);
+
+  $("#text_puzzle div").each(function(){
+    var j = parseInt(this.id-1);
+    $(this).css({
+      'background-image':'url(puzzle/'+j+'.png)',
+      'background-size':'cover'
+  });
+    $(this).hover(function(){
+      var i = parseInt(this.id-1);
+       $('#sentence').text(sentences[i]); 
+    })
+  }); 
+</script>
+</body>
+</html>

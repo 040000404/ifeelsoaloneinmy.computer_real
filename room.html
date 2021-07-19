@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="tabledragger.min.js"> </script>
+
+ 
+</head>
+<body>
+  <layer>
+  <default>
+    <div class="content day">
+      <div id="lamp" class="daylamp">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+      </div>
+       
+      
+      <div id='mags' class="dayimage roomimage" title="back" onclick='location.href = "main.html";'> 
+         
+        </div>
+      </default>
+    </layer>
+ <script>   
+  //lamp
+  var toggle = false;
+  $('#lamp').click(function(){
+
+    toggle = !toggle;
+
+    if(toggle){
+      //$('.content').toggleClass('night',1000);
+      $('#lamp').toggleClass('nightlamp',1000);
+      $('#die').toggleClass('nightbutton',1000); 
+      $('.slider').toggleClass('nightswitch',1000); 
+      $('layer').toggleClass('nightshift',1000);
+      $('default').toggleClass('nightbox',1000);
+      $("#mags").toggleClass('nightimage',1000);
+    }
+    else{
+      $('.content').toggleClass('day',1000);
+      $('#lamp').toggleClass('daylamp',1000);
+      $('#die').toggleClass('daybutton',1000);
+      $("#mags").toggleClass('dayimage',1000);
+    } 
+  });
+  
+
+var content = "";
+for(i=0;i<100;i++){
+  var j = parseInt(i+1); 
+  content += '<div id="' + j + '"class="puzzle_piece">'+'</div>'; 
+} ;
+$('#text_puzzle').append(content);
+ 
+ 
+
+  $("#text_puzzle div").eq(0).hover(function(){
+      $('#sentence').text(sentences[0]);
+  }); 
+  $("#text_puzzle div").eq(1).hover(function(){
+      $('#sentence').text(sentences[1]);
+  });  
+
+  
+
+ 
+
+ 
+</script>
+</body>
+</html>

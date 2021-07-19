@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>외국에서 샤워하기</title>
+	<link rel="stylesheet" href="style.css">
+	<script src='https://code.jquery.com/jquery-3.2.1.slim.js'
+        integrity='sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=' crossorigin='anonymous'></script>
+<script src="tabledragger.min.js"> </script>
+</head>
+<body id="dark_body">   
+
+<div id="tableDiv">
+  <div id="poem_index_ko">
+            <span>ㄱ</span>
+            <span>ㄴ</span>
+            <span>ㄷ</span>
+            <span>ㄹ</span>
+            <span>ㅁ</span>
+            <span>ㅂ</span>
+            <span>ㅅ</span>
+            <span>ㅇ</span>
+            <span>ㅈ</span>
+            <span>ㅊ</span>
+  </div>
+  <div id="tableFrame">
+<table id="table" id="tableEN" class="disable-select">
+  <thead>
+    <tr><th class="handle"><span>나</span></th><th class="handle"><span>는</span></th><th class="handle"><span>너</span></th><th class="handle"><span>와</span></th><th class="handle"><span>함께</span></th> <th class="handle"><span>일 때</span></th><th class="handle"><span>가장</span></th><th class="handle"><span>혼자</span></th><th class="handle"><span>라고</span></th><th class="handle"><span>느낍<br>니다</span></th></tr>
+  </thead>
+  <tbody id="tbody_en">
+    <tr><td>I</td><td>wish</td><td>wear<br>ing</td><td>seems<br>like</td><td>one</td><td>the<br>jeans</td><td>you<br>are</td><td>to<br>wear</td><td>made</td> <td>for<br>me</td></tr><tr><td>I</td><td>can<br>not</td><td>of<br>it</td><td>I</td> <td>wave</td> <td>my<br>eyes</td><td>off</td><td>take</td><td>my<br>legs</td><td>slowly<br>into</td></tr><tr><td>the<br>jeans</td><td>hands</td><td>knees</td><td>are</td><td>tense</td><td>in</td><td>poc<br>kets</td><td>tucked</td><td>I</td><td>let</td></tr><tr><td>your</td><td>head</td><td>I</td><td>go</td><td>well</td> <td>shoulder</td> <td>should</td> <td>on<br>my</td><td>and</td><td>you</td></tr><tr> <td>go</td><td>wrong</td><td>I</td><td>need</td> <td>an<br>other</td><td>be<br>hurt</td> <td>should</td> <td>I<br>will</td> <td>face</td> <td>on</td> </tr>  <tr> <td>my<br>face</td>  <td>I<br>will</td> <td>legs</td><td>threaten</td><td>to<br>become</td><td>yours</td><td>but<br>my</td><td>ask<br>for</td><td>mer<br>maids</td><td><button type="button" id="callme" onclick="location.href='main.html'"><span>call<br>me</span></button></td></tr>
+  </tbody>
+</table>
+</div>
+  <p id="jeans">- 바지의 문제, 신해욱</p>
+
+  <div  id="poem_lang">
+    <button id="poem_en"   type="button" onclick="location.href='poem.html'"> </button>
+  </div> 
+
+</div>
+<script type="text/javascript">	 
+      tableDragger(document.querySelector("#table"));
+      $('#poem_en').css({
+        'background':'white' 기
+
+    });
+      $('#poem_ko').css({
+        'background':'lightgray'
+
+    });
+</script> 
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="tabledragger.min.js"> </script>
+
+ 
+</head>
+<body>
+	<layer>
+	<default>
+		<div class="content day">
+			<div id="lamp" class="daylamp">
+				<label class="switch">
+  					<input type="checkbox">
+  					<span class="slider"></span>
+				</label>
+			</div>
+			 
+	 		
+	 		<div id='mags' class="dayimage"> 
+        <div class="item item_edges item_edges2 dream_bg"></div>
+        <div class="item item_edges2"id="dream2" title="dream">
+          <div id="randomSentences3">
+            <span class="subject"></span>
+            <span class="adjective"></span><br>
+            <span class="object"></span>
+            <span class="verb"></span>
+            <span class="adverb"></span>
+        </div>
+        <div id="randomSentences4">
+            <span class="ho2"></span> 
+            <span class="subject2"></span> 
+            <span class="verb1"></span>
+            <span class="adjective2"></span>
+            <span class="object2"></span>
+            <span class="verb2"></span><br>
+          <span class="adverb2"></span>
+            <span class="emotion2"></span>
+        </div>
+        </div>
+        <div class="item item_edges2 dream_bg" ></div>
+        
+        <div class="item item_edges dream_bg" ></div>
+        <div class="item" id="stage">
+           
+        </div>
+        <div class="item dream_bg"></div>
+
+        <div class="item item_edges dream_bg">
+           
+        </div>
+        <div class="item" id="back" title="back" onclick='location.href = "main.html";'>
+          
+        </div>
+        <div class="item dream_bg"></div>
+        <div class=" item_edges item_edges3 dream_bg"></div>
+        <div class="item_edges3 dream_bg"></div>
+        <div class="item dream_bg"></div>
+      </div>
+	 		
+	 	 
+			 
+				</div>
+        <div  id="main_lang">
+    <button id="main_en"   type="button" onclick="location.href='dream20210707en.html'"> </button>
+     
+  </div> 
+
+			</default>
+		</layer>
+ <script>   
+
+	//lamp
+	var toggle = false;
+	$('#lamp').click(function(){
+
+		toggle = !toggle;
+
+		if(toggle){
+			$('.content').toggleClass('night',1000);
+			$('#lamp').toggleClass('nightlamp',1000);
+			$('#die').toggleClass('nightbutton',1000); 
+			$('.slider').toggleClass('nightswitch',1000); 
+			$('layer').toggleClass('nightshift',1000);
+			$('default').toggleClass('nightbox',1000);
+			$("#mags").toggleClass('nightimage',1000);
+		}
+		else{
+			$('.content').toggleClass('day',1000);
+			$('#lamp').toggleClass('daylamp',1000);
+			$('#die').toggleClass('daybutton',1000);
+			$("#mags").toggleClass('dayimage',1000);
+			 
+ 
+		}	
+
+	});
+  
+  	//random sentences
+  var subject = [
+  '너가',
+  '엄마 나',
+  '엄마',
+  '선생은',
+  '계단이',
+  '나는',
+  '암튼 그는',
+  '그곳은',
+  '얼마 후' 
+], adjective = [
+  '나한테 ',
+  '곧',
+  '이제',
+  '좁은데',
+  '끝나자마자',
+  '',
+  '그런 사람이었어',
+  '행복을 줬으니까',
+  '',
+  '',
+  '노르스름한',
+  '흔들리는',
+  '얇은'
+],object = [
+  '행복을', 
+  '행복을', 
+  '시간은 일곱 시 오십오 분',
+  '식당을',
+  '메밀전병 피를',
+  '고목나무 식탁 위에',
+  '피아노학원에',
+  '밥',
+  '비행기 모드를',
+  '가방을',
+  '피아노 한 대',
+  '그애를',
+  '낮게 웃는 소리'
+], verb = [
+  '줬으니까','줬으니까',
+  '펼치고 있었어',
+  '찢어댔어','찢어댔어',
+  '갔고',
+  '먹어야 해',
+  '켜야 해',
+  '운영하신다고',
+  '들려',
+  '',
+  '전화해',
+  '사라졌다고'
+], adverb = [
+  '지하철 조명',
+  '코팅지에',
+  '접시가 없어서',
+  '이미',
+  '...',
+  '',
+  '',
+  '.',
+  '뒤로'
+] 
+
+//random sentences 2
+var ho2 = [
+	'어서,',
+	'',
+	'',
+	'아 ',
+	'응',
+	'',
+	'어',
+	'그래',
+	'...',
+	'',
+	'싫다',
+	'아'
+],
+  subject2 = [
+  '얼마 후',
+  '그렇게',
+  '선생님',
+  '나는',
+  '그곳은', 
+  '중간에',
+  '전부',
+  '', 
+  '나'
+], verb1 = [
+  '사라졌어요',
+  '재채기해요',
+  '기억해요.',
+  '출국해요',
+  '여덟시 반...',
+  '안 파네요',
+  '애꾸눈에'
+], adjective2 = [
+  '안경 쓴',
+  '작은', 
+  '좁은',
+  '서울 각지의',
+  '그런',
+  '같이 수업 듣는',
+  '팔 것 같은'
+  
+], object2 = [  
+  '사람',
+  '피아노', 
+  '사람이었습니다',
+  '데를',
+  '애'
+
+], adverb2 = [
+  '이제',
+  '어떻게',
+  '어서',
+  '진짜',
+  '노동조합 시위를 위해', 
+  '타일건물 꼭대기층', 
+  '',
+  '얇아서'
+
+],verb2 = [
+  '먹어야 해요', 
+  '옮겼을까요',
+  '지나서',
+  '운영하셨지요',
+  '날아가나요',
+  '걸어요'
+], emotion2 = [
+  '',
+  '...',
+  '.',
+  '',
+  '',
+  '밝네요 아직',
+  ',',
+  '?',
+  '-',
+  '고개를 내두르며',
+  '격투기에 대해 이야기할 때마다'
+]
+
+function shuffle(db) {
+  return db[Math.floor(Math.random() * db.length)];
+}
+
+setInterval(function(){
+  $('.subject').hide().delay(100).text(shuffle(subject)).fadeIn();
+  $('.verb').hide().delay(110).text(shuffle(verb)).fadeIn();
+  $('.adjective').hide().delay(120).text(shuffle(adjective)).fadeIn();
+  $('.object').hide().delay(130).text(shuffle(object)).fadeIn();
+  $('.adverb').hide().delay(140).text(shuffle(adverb)).fadeIn();
+  $('.verb').hide().delay(150).text(shuffle(verb)).fadeIn();
+  // $('.verb1').hide().delay(160).text(shuffle(verb1)).fadeIn();
+  // $('.emotion').hide().delay(170).text(shuffle(emotion)).fadeIn();
+
+  $('.subject2').hide().delay(1000).text(shuffle(subject2)).fadeIn();
+  $('.verb1').hide().delay(1010).text(shuffle(verb1)).fadeIn();
+  $('.adjective2').hide().delay(1020).text(shuffle(adjective2)).fadeIn();
+  $('.object2').hide().delay(1030).text(shuffle(object2)).fadeIn();
+  $('.adverb2').hide().delay(1040).text(shuffle(adverb2)).fadeIn();
+  $('.verb2').hide().delay(1050).text(shuffle(verb2)).fadeIn();
+  $('.emotion2').hide().delay(1070).text(shuffle(emotion2)).fadeIn();
+ },7000);
+ 
+var content = "";
+for(i=0;i<100;i++){
+  var j = parseInt(i+1); 
+  content += '<div id="' + j + '"class="puzzle_piece">'+'</div>'; 
+   
+   
+} ; 
+</script>
+</body>
+</html>

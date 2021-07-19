@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="tabledragger.min.js"> </script>
+
+ 
+</head>
+<body>
+  <layer>
+  <default>
+    <div class="content day">
+      <div id="lamp" class="daylamp">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+      </div>
+       
+      
+      <div id='mags' class="dayimage"> 
+        <div class="item item_edges item_edges2 hintblur"></div>
+        <div class="item item_edges2 hintblur"></div>
+        <div class="item item_edges2 hintblur"> 
+        </div>
+        
+        <div class="item item_edges hintgrids">
+          <div id="hintgrid1ko">
+          <div class="hint">ㄱ</div>
+          <div class="hint">ㄴ</div>
+          <div class="hint">ㄷ</div>
+          <div class="no nobord">1</div>
+          <div class="no nobord">2</div>
+          <div class="no">8</div>
+          </div>
+          <div></div>
+          <div class="hintgriden" id="hintgrid1en">
+          <div class="no nobord">8</div>
+          <div class="no nobord">2</div>
+          <div class="no">10</div>
+          <div class="hint">a</div>
+          <div class="hint">b</div>
+          <div class="hint">c</div>
+        </div>
+        </div>
+        <div class="item hintgrids">
+          <div id="hintgrid2ko">
+          <div class="hint">ㄹ</div>
+          <div class="hint">ㅁ</div>
+          <div class="hint">ㅂ</div>
+          <div class="hint">ㅅ</div>
+          <div class="no nobord">6</div>
+          <div class="no nobord">7</div>
+          <div class="no nobord">3</div>
+          <div class="no">4</div>
+        </div>
+        <div></div>
+        <div class="hintgriden" id="hintgrid2en">
+          <div class="no nobord">5</div>
+          <div class="no nobord">6</div>
+          <div class="no nobord">7</div>
+          <div class="no">1</div>
+          <div class="hint">d</div>
+          <div class="hint">e</div>
+          <div class="hint">f</div>
+          <div class="hint">g</div>
+        </div>
+        </div>
+        <div class="item hintgrids">
+          <div  id="hintgrid3ko">
+          <div class="hint">ㅇ</div>
+          <div class="hint">ㅈ</div>
+          <div class="hint">ㅊ</div>
+          <div class="no nobord">5</div>
+          <div class="no nobord">9</div>
+          <div class="no">10</div>
+        </div>
+        <div></div>
+          <div class="hintgriden"id="hintgrid3en">
+          <div class="no nobord">9</div>
+          <div class="no nobord">3</div>
+          <div class="no">4</div>
+          <div class="hint">h</div>
+          <div class="hint">i</div>
+          <div class="hint">j</div>
+        </div>
+        </div>
+
+        <div class="item item_edges hintblur" id="row_index_grid">
+           
+        </div>
+        <div class="item hintblur" id="back" title="back" onclick='location.href = "main.html";'></div>
+        <div class="item hintblur"></div>
+        <div class=" item_edges item_edges3"></div>
+        <div class="item_edges3"></div>
+        <div class="item"></div>
+      </div> 
+        </div>
+      </default>
+    </layer>
+ <script>  
+  // $("#mags").hover(function(){
+  //     $('#mags div').css({'display':'block'});
+  // });   
+  //lamp
+  var toggle = false;
+  $('#lamp').click(function(){
+
+    toggle = !toggle;
+
+    if(toggle){
+      //$('.content').toggleClass('night',1000);
+      $('#lamp').toggleClass('nightlamp',1000);
+      $('#die').toggleClass('nightbutton',1000); 
+      $('.slider').toggleClass('nightswitch',1000); 
+      $('layer').toggleClass('nightshift',1000);
+      $('default').toggleClass('nightbox',1000);
+      $("#mags").toggleClass('nightimage',1000);
+    }
+    else{
+      $('.content').toggleClass('day',1000);
+      $('#lamp').toggleClass('daylamp',1000);
+      $('#die').toggleClass('daybutton',1000);
+      $("#mags").toggleClass('dayimage',1000);
+    } 
+  });
+  
+
+var content = "";
+for(i=0;i<100;i++){
+  var j = parseInt(i+1); 
+  content += '<div id="' + j + '"class="puzzle_piece">'+'</div>'; 
+} ;
+$('#text_puzzle').append(content);
+ 
+
+var sentences = [
+    '모여있을수록 죽는 것들',
+    '이것은 정부의 판데믹 예방 구호가 아니라, 그것(코로나 숙주) 말고도.', 
+'이들은 상위 포식자에 의해 박멸당하거나, 알아서 도태되어 함께 사라지거나 하는…',
+'이런 식의 파멸로 끝난다.',
+'아직 파멸에 도달하지 않은, 혹은 파멸 직전 이들이 모여 있는 모습을 떠올린다.',  
+ '',
+ '',
+ '',
+ '',
+ '',
+
+'E는 지루한 식사를 하고 싶었다. ',
+'지루한 식사를 하기 위해서는 지루한 식당에 가야 했다. ',
+'재건축을 앞둔 상가에는 간판들이 진딧물처럼 매달려 있었다.', 
+'예전에 고속터미널을 지날 때마다 토다이 간판을 보며 이곳이 어린이 수영장일 것이라고 생각했다.', 
+ '토다이는 해산물 뷔페 체인이고 일본어로 ‘등대’라는 뜻이다. ',
+'이곳은 넓고 시원하며 알록달록한 음식들이 코너별로 진열되어 있고 테마송도 나온다.', 
+ '그래서 H는 이곳에 오면 아무런 생각이나 대화나 음미도 없이 가장 지루한 식사를 할 수 있을 것이라고 생각했다.',  
+ 'E는 자신의 미술 학교 친구들이 독특하게 입고 다니는데 꾸미기에 특별한 애정이 없는 자기만 애매하게 독특하게 보일까봐 그것이 싫어서 어느날 평범한 옷을 입고 다니게 되었는데 친구들은 이런 E의 스타일을 독특하다고 말해주었다.',
+'E는 그런 말에 대답하기가 어려웠다.', 
+'사실 토다이가 한물 간 시푸드 레스토랑인지 어린이 실내수영장인지는 중요하지 않다.',
+'여기 4인용 테이블에서 홀로 평일 런치를 이용하고 있는 E를 누군가는 멀찍이서 바라보며 관심가질 수도 있을 것이라는 것이.',
+ '역사의 전개는 반동에 대한 반동에 대한 반동에 대한 반동일 뿐이라서 지금 재미있는 게 곧 재미없는 것이 되고 지금 사랑하는 게 가장 미운 것이 된다면. ',
+ '여자의 분노는 순수한 감정이 되고 순박한 남자는 해석의 여지가 충만한 예외적 현상이 되는 날이 온다면.',
+ '파란색 타일 진열대 위에는 얼음이 깔려 있고 디쉬들이 줄지어 채워져 있었다. ',
+'H는 집게로 스시롤을 종류마다 하나씩 담았다.', 
+ '진열대 밑에서는 시원한 바람이 다리를 스치고 있었고 맞은편 밥을 다지는 요리사들 쪽에서는 열이 푹푹 찌고 있었다.', 
+ 'E가 롤 하나를 접시에 담을 때마다 요리사가 말없이 새로운 롤 한 점을 올렸다.', 
+'하늘이 물컹했다.', 
+ 
+ 
+
+'오존과 햇빛의 선후관계 ',
+'오존층(ozone layer)은 지구, 화성, 금성 따위의 행성 대기권에서 관찰되는 공기층으로 상대적으로 높은 함량의 오존을 포함한다. ',
+'지구에서, 이 공기층은 단파 자외선을 흡수하는 성질이 있어 실질적으로 지표에 도달하는 자외선량이 급감하여, 그 결과 육상생물이 출현하는 계기가 되었다.', 
+'대기중의 오존은 어떻게 생성되나?',
+'대기중에서 오존은 강한 햇빛의 존재하에 자동차 등에서 배출되는 질소산화물(NOx)과 휘발성유기화합물질(VOC)이 반응하여 생성되며, 햇빛이 강하고 온도가 높은 여름철에 특히 많이 발생됨',
+'강한 햇빛(자외선) NOx + VOCs   ⇒ 오존',
+'오존에 반복 노출시에는 폐에 영구적으로 해를 입히게 되는데 낮은 농도 흡입시에도 가슴통, 기침, 메스꺼움, 목자극, 소화에 영향을 미치며, 기관지염, 심장질환, 폐기종 및 천식을 악화시키고 폐활량을 감소시킨다.',
+'특히 기관지 천식환자나 호흡기 질환자, 어린이, 노약자 등에게는 많은 영향을 미치므로 주의해야할 필요가 있다.',
+'환경에의 영향 - 식물의 생산·저장능력을 간섭하고, 질병, 해충, 다른 오염물질에 취약하게 하여 나무 성장률 저하등 산림·생태계에 피해 및 손상을 준다.', 
+
+
+ '모여있을수록 죽는 것들에 대해 생각하다가, 이들이 풍기는 감정은 모여있는 상태가 인내하는 조름(smother)과 관련이 있다는 것을 알게 되었다.', 
+ '이들은 자기 목숨을 담보로 네트워크의 안전을 유지하고자 땀을 나누고 살갗을 비벼댄다.',
+ '아무리 갑갑해도 그곳만이 주는 온기 같은 게 있잖아요..라고 누가 말했던 것 같은데.',
+ '결과는 안전한 죽음이다. ',
+ '서로의 목을 끈적하고 애정 어리게 조르고 있다.', 
+ '조름에 대한 상상은 더위에 거슬리는 허벅지를 주물러댈 때처럼 실감나서, 세상에 물질이 아닌 생각은 없다고 믿게 만든다.', 
+'조름에 대한 상상은 터미널의 공기를 떠올리면 될 것이다.', 
+'터미널에서는 두텁고 뜨듯한 구름층을 이루고 있는 초미세 입자를 관찰할 수 있다.', 
+'요즘 태어나는 아이들은 속눈썹과 코털이 길다고 하던데 이에 대해 작은 가설을 제안해 보자면 그러하다. ',
+ 
+
+'초미세 입자에 대한 알레르기 반응으로 호흡곤란이 왔다.', 
+ '저는 이것의 역효과로 운동을 하지도 않으면서 기능성 스포츠웨어를 찾아 입는 사람이 되었수다.', 
+'그들이 가장 무해하다고 제시했던 코튼 소재에 대한 반동으로서, 그리고 폐가 숨쉴 수 없다면 적어도 피부는 숨쉴 수 있도록.',
+ '이 호흡곤란 증세는 흔히 혼자 있는 시간이 길어지면 찾아오는 고통 중 하나로 착각하기 쉽다.', 
+'그 착각은 분리불안장애(separation anxiety disorder, SAD)와 사회불안장애(social anxiety disorder, SAD) 환자에 처방하는 약물의 효능효과가 ‘불안장애 치료 및 불안증상 단기완화’로 같은 난처한 사실과도 비슷하다.', 
+'(함께가 아니어서 아픈 것과 함께여서 아픈 것에 대한 처방이 어떻게 같을 수 있는지 이해할 수 없다.)', 
+'모두에게 모든것을 밝히고 싶은 심정과 모두로부터 모든것을 삭제해버리고 싶은 충동을 동시에 느낀다.', 
+'이것은 고립에 대한 현기증이 아니다.', 
+'이미 너무 많은 것들이 나를 둘러싸고 있어서 돋아나는 피부병이라는 것을 지각해야 한다.',   
+  
+
+'네가 나를 부르면 그말이 온몸을 휘감고 나는 온실속에 자라는 알로에나무가 되는 기분입니다…', 
+'그린벨트와 아파트 단지의 공통점은 숲의 양태를 갖고 있는 것도 그렇지만 무엇을 보호하고 있다는 것.', 
+'그들이 자처하는 인큐베이터의 역할은 각각 포옹과 조름으로 묘사된다.', 
+'아파트에 사는 사람은 완벽하게 혼자임을 느낄 수 있는가.', 
+'철제 스프레이칠 분수대와 더럽게 순진한 식물계…', 
+'진달래와 회양목이 있고, 녹색 회양목과 갈색 회양목이 있으며,',  
+ '회양목은 영어로 상자나무boxwood이다.(그러니까 그들은 지루한 형태로 조경된 것이 아니라 원래 지루하게 생긴 것이었다…).', 
+'회양목의 꽃은 불변성을 상징합니다.', 
+ '그들은 내가 불변하는 삶을 살기를 원하는지?', 
+'그들은 내가 당신에게 영원히 대답하지 않기를 바라는 것인지.', 
+
+ '조름과 호흡곤란에 대한 회피반응이자 보다 진심어린 답장을 위한 노력으로 여기기 마련인 것들 —', 
+ '잠자기, 가족과 같은 편이 주는 온기를 간절히 바라되 그것을 철저히 외면하기, 집앞 버스정류장을 지나는 모든 버스를 타고 종점까지 가기 등.',
+'조름에 대한 공포가 커질수록 잠이 많아졌다.',
+ '잠이 오지 않을 때도 잠을 청했다. ',
+'밥을 먹고 바로 누워서 음식도 같이 눕는 게 느껴질 때에도 잠을 청했다.', 
+'낮에도 자고 밤에도 잤다. ',
+'하루에 열네 시간 넘게 잠을 잤다. ',
+'자기 위해 누워 있었다. ',
+'이렇게 많이 자는 것에 대해 다음 사실을 알게 된 이후로 죄책감을 느끼지 않게 되었는데, 꿈에서는 초미세입자에 대한 알레르기 반응이 일어나지 않기 때문이다. ',
+'꿈속에서는 혼자되기 위해 필사적으로 노력하지 않아도 된다.', 
+
+'나의 꿈에는 주로 아는 사람들이 너댓 명씩 번갈아가며 등장한다.', 
+'가족도 있고 본 지 10년이 넘은 사람도 있고 아끼는 사람도 있고 미운 사람도 있다.', 
+'이들이 반가운 이유는 깨어나면 전부 사라질 것이기 때문이다.', 
+'(깨어난 뒤에야 꿈 속 일들에 대해 생각할 수 있으므로, 꿈이 위시하는 감각은 조름보다 파멸이 크다.)',
+ '다음으로 중요한 시간은 일어나서 꿈 일기를 쓸 때인데, 만약 이것조차 쓸 수 없다면 일어나려고 하지 않을 것이다.', 
+ '꿈 일기를 쓸 때 가장 재미있는 점은 꿈에서 일어나지도 않은 내용을 서술하는 문장들을 만들어 붙이는 일이다.', 
+ '만약 이것조차 쓸 수 없다면 일어나려 하지 않았을 것이다.',
+'어차피 꿈은 금방 까먹어서 며칠만 지나고 읽어도 어디가 진짜 꿈인지 거짓말인지 분간하지 못하게 된다.', 
+'그렇게 되면 일기는 꿈도 아니고 현실도 아니고 제 3의 현장에 대한 서술이 된다.', 
+'페이지와 페이지 사이에 들어가는 거짓말을 얇게 저민다.', 
+
+
+'꿈 일기를 쓰는 것보다도 사실 중요한 일은 네게 답장하는 것이므로, 다음과 같은 코스를 만들어 실천하였다:', 
+'1. 낮에는 비행기 모드를 켜 놓고 생활한다.', 
+'2. 동거인들이 잠든 시간에 샤워를 하고 향기나는 것을 몸에 뿌린다.', 
+'3. 몸과 머리카락을 말리지 않고, 맨발에 옷가지는 최대한 가볍게 걸치고 나간다.',
+'위 코스는 어느 외국의 바닷가에서 물놀이를 마치고 씻은 후 젖어있는 상태에서 근처 정원이나 도로를 돌아다니는 듯한 착각을 제공한다.',
+ '날리는 초미세입자들로부터 자유로워지는 시간이다.', 
+ '모여 있는 것들은 대개 즉물적이다.', 
+'혼자 있을 때 솟아나는 대화가 조형화된 꼴을 보고 싶다.',
+'위 코스를 밝히는 대가로 나는 더 이상 서로의 어떤 것에 대해서도 검색하지 않을 것을 제안한다.', 
+'거래를 어길 시 자신과 관련된 모든 것을 삭제할 것을 약속한다.'  
+];
+  
+
+  $("#text_puzzle div").eq(0).hover(function(){
+      $('#sentence').text(sentences[0]);
+  }); 
+  $("#text_puzzle div").eq(1).hover(function(){
+      $('#sentence').text(sentences[1]);
+  });  
+
+  
+
+ 
+
+ 
+</script>
+</body>
+</html>
