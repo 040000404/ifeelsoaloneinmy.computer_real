@@ -1,3 +1,10 @@
+
+@font-face {
+      font-family: "gulim";
+      src:  local("gulim"),
+  url(fonts/gulim.ttf);
+}
+
 *,
 *::before,
 *::after {
@@ -17,7 +24,7 @@ html, body{
 
   overflow: hidden;
 }
- 
+
 #dark_body{
 	background-color: #050012 /*E5E8EE*/;
 }
@@ -27,6 +34,7 @@ html, body{
   -ms-user-select: none;      
   user-select: none;
 }
+
 
 /*lang*/
  
@@ -675,9 +683,8 @@ default p{
  	font-size: 9pt;
  	text-align: center; 
  } 
- .puzzle_piece:hover{
- 	cursor: move;
- 	border: 1px solid black;
+ .puzzle_piece:hover{ 
+ 	background: rgba(200,200,200,0.5);
 
  }
 
