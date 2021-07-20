@@ -119,80 +119,7 @@ for(i=0;i<100;i++){
   content += '<div id="' + j + '"class="puzzle_piece">'+'</div>'; 
 } ;
 $('#text_puzzle').append(content);
-
-
-//sort #text_puzzle grid
-
-function sortable(section, onUpdate){
-    var dragEl, nextEl, newPos, dragGhost;
  
-    let oldPos = [...section.children].map(item => {
-      item.draggable = true
-      let pos = document.getElementById(item.id).getBoundingClientRect();
-      return pos;
-    });
-   
-    function _onDragOver(e){
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-        
-        var target = e.target;
-        if( target && target !== dragEl && target.nodeName == 'DIV' ){
-          if(target.classList.contains('inside')) {
-            e.stopPropagation();
-          } else {
-      //getBoundinClientRect contains location-info about the element (relative to the viewport)
-          var targetPos = target.getBoundingClientRect();
-           //checking that dragEl is dragged over half the target y-axis or x-axis. (therefor the .5)
-          var next = (e.clientY - targetPos.top) / (targetPos.bottom - targetPos.top) > .5 || (e.clientX - targetPos.left) / (targetPos.right - targetPos.left) > .5;    
-            section.insertBefore(dragEl, next && target.nextSibling || target);
-             
-            /*  console.log("oldPos:" + JSON.stringify(oldPos));
-             console.log("newPos:" + JSON.stringify(newPos)); */
-             /* console.log(newPos.top === oldPos.top ? 'They are the same' : 'Not the same'); */
-             }
-        }   
-    }
-    
-    function _onDragEnd(evt){
-        evt.preventDefault();
-        newPos = [...section.children].map(child => {      
-             let pos = document.getElementById(child.id).getBoundingClientRect();
-             return pos;
-           });
-        console.log(newPos);
-        dragEl.classList.remove('ghost');
-        section.removeEventListener('dragover', _onDragOver, false);
-        section.removeEventListener('dragend', _onDragEnd, false);
-
-        nextEl !== dragEl.nextSibling ? onUpdate(dragEl) : false;
-    }
-       
-      section.addEventListener('dragstart', function(e){     
-        dragEl = e.target; 
-        nextEl = dragEl.nextSibling;
-        /* dragGhost = dragEl.cloneNode(true);
-        dragGhost.classList.add('hidden-drag-ghost'); */
-        
-       /*  document.body.appendChild(dragGhost);
-        e.dataTransfer.setDragImage(dragGhost, 0, 0); */
-    
-        e.dataTransfer.effectAllowed = 'move';
-        e.dataTransfer.setData('Text', dragEl.textContent);
-      
-        section.addEventListener('dragover', _onDragOver, false);
-        section.addEventListener('dragend', _onDragEnd, false);
-         
-        setTimeout(function (){
-            dragEl.classList.add('ghost');
-        }, 0)
-       
-    }); 
-    }
-                                          
-sortable( document.getElementById('text_puzzle'), function (item){
-    /* console.log(item); */
-});
 
 var sentences = [
   '조름과 호흡곤란에 대한 회피반응이자 보다 진심어린 답장을 위한 노력으로 여기기 마련인 것들 — ',
@@ -300,16 +227,29 @@ var sentences = [
      console.log(sentences.length);
 
   $("#text_puzzle div").each(function(){
-    var j = parseInt(this.id-1);
+    var j = parseInt(this.id);
+    if(j%10==0){
+      $(this).css({
+        'border-bottom':'1px solid rgba(0,0,0,0.5)'
+      });
+    }else{
     $(this).css({
-      'background-image':'url(puzzle/'+j+'.png)',
-      'background-size':'cover'
-  });
+      'border-right':'1px solid rgba(0,0,0,0.5)',
+      'border-bottom':'1px solid rgba(0,0,0,0.5)'
+
+  });}
     $(this).hover(function(){
       var i = parseInt(this.id-1);
        $('#sentence').text(sentences[i]); 
+       if(sentences[i]!=''){
+        $(this).css({
+          'background':'rgba(255,255,255,0.5)'
+        })
+       }
+
     })
   }); 
+ 
 </script>
 </body>
 </html>
