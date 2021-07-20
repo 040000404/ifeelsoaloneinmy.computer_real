@@ -398,7 +398,6 @@ td{
 	color: ghostwhite;
 	background: rgba(30,30,30,0.8); 
  	box-shadow: 0 0 2px 1px RGB(250, 249, 252) inset;
- 	transition: all 2s ease-in-out;
  	font-family: gulim; 
  	opacity: 0.8;
 
@@ -408,9 +407,14 @@ th, td{
 	text-align: center; 
 	/*word-break: break-all;*/
 }
-td:hover{
+/*td:hover{
 	box-shadow: 0 0 2px 3px RGB(250, 249, 252) inset;
 	background: rgba(30,30,30,0.8);
+}*/
+
+th:hover{
+	box-shadow: 0 0 2px 3px RGB(200, 209, 202) inset; 
+	background: rgba(250, 249, 252,0.8);
 }
 
 #callme {
