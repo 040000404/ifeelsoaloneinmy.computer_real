@@ -261,10 +261,12 @@ flexbox{
 	flex-direction: column;
 	justify-content: center;  
 }
+
 #loadimages{
 	display: flex;  
 	margin: 0;  
 	width: 322px;
+	height: 185.53px;
 	position: relative;
 	transform:  translateX(-50%);
 	left: 50%; 
