@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ifeelsoaloneinmy.computer</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<default>
+	<div class="content day" id="maintext">  
+	<div id="lamp" class="daylamp">
+		<label class="switch">
+  			<input type="checkbox">
+  			<span class="slider"></span>
+		</label>
+	</div>
+ 	<p>it isn't easy to feel perfectly on my own, surrounded by an apartment complex. Apartment forest. color sprayed metal fountains and the botany uhh the botany. so naive the goddess of landscape would cry away. same species, same topiary i've lived and seen in three different apartment “brands” my whole life and all the same. rhododendron and boxwood. green boxwood. dry boxwood. box wood. i learned that boxwood flower represents constancy. d o they want me to live in constancy .  d o they not want me to reply to you   for good                </p>
+	<div id="phone">
+    			<div id="phonescreen">
+        			<p id="dial"></p>
+    			</div>
+    			<div id="keypad">
+					<div>
+						<button type="button" class="number">1</button>
+						<button type="button" class="number">2</button>
+						<button type="button" class="number">3</button>
+					</div>
+					<div>
+						<button type="button" class="number">4</button>
+						<button type="button" class="number">5</button>
+						<button type="button" class="number">6</button>
+					</div>
+					<div>
+						<button type="button" class="number">7</button>
+						<button type="button" class="number">8</button>
+						<button type="button" class="number">9</button>
+					</div>
+					<div>
+						<button type="button" class="number">*</button>
+						<button type="button" class="number">0</button>
+						<button type="button" class="number">#</button>
+					</div>
+					</div>
+					<button type="button" id="callbutton">&nbsp;call&nbsp;</button>
+
+	</div>   
+</div> 
+	</default>
+
+     
+  </div> 
+	
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('input:checkbox').removeAttr('checked');
+  });
+
+	//lamp
+	var toggle = false;
+	$('.switch').click(function(){
+
+		toggle = !toggle;
+
+		if(toggle){
+			$('.content').toggleClass('night',1000);
+			$('#lamp').toggleClass('nightlamp',1000);
+			$('#die').toggleClass('nightbutton',1000); 
+			$('.slider').toggleClass('nightswitch',1000); 
+			$('layer').toggleClass('nightshift',1000);
+			$('default').toggleClass('nightbox',1000);
+			$("#mags").toggleClass('nightimage',1000);
+      $("#main_en").toggleClass('nightlang',1000);
+		}
+		else{
+      $('input:checkbox').removeAttr('checked');
+			$('.content').toggleClass('day',1000); 
+			$('#lamp').toggleClass('daylamp',1000);
+			$('#die').toggleClass('daybutton',1000);
+			$("#mags").toggleClass('dayimage',1000);
+      $("#main_en").toggleClass('daylang',1000); 
+		}	
+	});
+  window.onpageshow = function(event) {
+    if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+    var chk = $("input").is(":checked");
+    if(chk) {$("input").prop("checked", false).attr("checked", false).removeAttr("checked");}
+    }
+};
+
+	
+	var tel = $('#dial').text();
+
+	$('.number').click(function(){
+  		var no = $(this).text();
+      	$( "#dial" ).append(no); 
+      	tel = $('#dial').text();
+	});
+	$('#callbutton').click(function(){
+      	window.open('tel:'+ tel); 
+	});
+
+	var creditsKO ='<br>이하령 / itsamode<br><br>아상블라주 작업 Magnus Star / magstar37 <br><br> 고마운 사람들 angel4angel, lovelag'
+	var creditsEN = '&lt;shower in a foreign country&gt;<br><br>Haryung Lee / itsamode<br><br>assemblage by Magnus Star / magstar37 <br><br> special thanks to angel4angel, lovelag'
+	var i = 0;
+	$('#end_lang').click(function(){
+		i = i + 1;
+		if(i%2==0){
+			$('credits').html(creditsEN);
+		}
+		else{
+		$('credits').html(creditsKO);
+		 };
+	}); 
+
+
+</script>
+</html>

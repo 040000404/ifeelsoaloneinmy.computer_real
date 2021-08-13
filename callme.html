@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ifeelsoaloneinmy.computer</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <default>
+  <div class="content_phone"> 
+  <div id="phone">
+          <div id="phonescreen">
+              <p id="dial"></p>
+          </div>
+          <div id="keypad">
+          <div>
+            <button type="button" class="number">1</button>
+            <button type="button" class="number">2</button>
+            <button type="button" class="number">3</button>
+          </div>
+          <div>
+            <button type="button" class="number">4</button>
+            <button type="button" class="number">5</button>
+            <button type="button" class="number">6</button>
+          </div>
+          <div>
+            <button type="button" class="number">7</button>
+            <button type="button" class="number">8</button>
+            <button type="button" class="number">9</button>
+          </div>
+          <div>
+            <button type="button" class="number">*</button>
+            <button type="button" class="number">0</button>
+            <button type="button" class="number">#</button>
+          </div>
+          </div>
+          <button type="button" id="callbutton">&nbsp;call&nbsp;</button>
+
+  </div>   
+</div> 
+  </default>
+
+     
+  </div> 
+  
+</body>
+<script type="text/javascript">
+  
+  var tel = $('#dial').text();
+
+  $('.number').click(function(){
+      var no = $(this).text();
+        $( "#dial" ).append(no); 
+        tel = $('#dial').text();
+  });
+  $('#callbutton').click(function(){
+        window.open('tel:'+ tel); 
+  });
+
+  var creditsKO ='<br>이하령 / itsamode<br><br>아상블라주 작업 Magnus Star / magstar37 <br><br> 고마운 사람들 angel4angel, lovelag'
+  var creditsEN = '&lt;shower in a foreign country&gt;<br><br>Haryung Lee / itsamode<br><br>assemblage by Magnus Star / magstar37 <br><br> special thanks to angel4angel, lovelag'
+  var i = 0;
+  $('#end_lang').click(function(){
+    i = i + 1;
+    if(i%2==0){
+      $('credits').html(creditsEN);
+    }
+    else{
+    $('credits').html(creditsKO);
+     };
+  }); 
+
+
+</script>
+</html>

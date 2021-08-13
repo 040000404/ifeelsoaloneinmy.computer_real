@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ifeelsoaloneinmy.computer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="tabledragger.min.js"> </script>
+
+ 
+</head>
+<body>
+  <layer>
+  <default>
+    <div class="content"> 
+       
+      
+      <div id='mags'> 
+          <div id="car_number">
+            <div class="car_item" id="car_picture"></div>  
+            <div class="car_item" id="stage">
+              <div id="equation"></div>
+            </div> 
+            <div class="car_item" id="text_puzzle"></div>  
+          </div>
+        </div> 
+      </default>
+
+    </layer>
+ <script>  
+  
+
+var content = "";
+for(i=0;i<30;i++){
+  var j = parseInt(i+1); 
+  content += '<div id="' + j + '"class="puzzle_piece">'+'</div>'; 
+} ;
+$('#text_puzzle').append(content);
+
+ 
+ 
+ var equation = [
+    '',
+    '- + + and then + - -',
+    '÷ + √ -',
+    '- - -',
+    '+ - ×',
+    '× × ( - )',
+    '+ + -',
+    '( + - ) ×',
+    '× × - and then √( + ) + -',
+    '( - - ) ×',
+    '× × ×',
+    '( + ) × ×',
+    '( + √ ) ÷√ - ',
+    '× × ( - )',
+    '- + +',
+    '- - +',
+    '÷ + -',
+    '×√ + -',
+    ' + ×√ -',
+    '( - - ) ×',
+    '- - +',
+    '× × ( - )',
+    '× × ×',
+    '',
+    '× ×√ - ',
+    '- + ×',
+    '- + -√',
+    '- - -',
+    '+ - -',
+    '+ - +√'
+
+  ];
+
+  $("#text_puzzle div").each(function(){
+    var j = parseInt(this.id);
+    if(j%10==0){
+      $(this).css({
+        'border-bottom':'1px solid rgba(0,0,0,0.5)'
+      });
+    }else{
+    $(this).css({
+      'border-right':'1px solid rgba(0,0,0,0.5)',
+      'border-bottom':'1px solid rgba(0,0,0,0.5)'
+    });
+  }
+    $(this).hover(function(){
+      var i = parseInt(this.id);
+      $('#equation').text(equation[i-1]);
+      $('#car_picture').css({
+        'background-image':'url(0/'+i+'.jpg)'
+    });
+  }); 
+  });
+</script>
+</body>
+</html>

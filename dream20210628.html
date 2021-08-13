@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ifeelsoaloneinmy.computer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="tabledragger.min.js"> </script>
+
+</head>
+<body id="dark_body"> 
+      <div id="loading">loading...</div>
+
+<load id="load"> 
+  <mist>
+  <flexbox>
+   <div id="randomSentences1">
+    <span class="subject subject_ko"></span>
+    <span class="verb verb_ko"></span><br>
+    <span class="adjective adjective_ko"></span>
+    <span class="object object_ko"></span>
+    <span class="verb1 verb1_ko"></span><br>
+    <span class="adverb adverb_ko"></span>
+    <span class="emotion emotion_ko"></span>
+  </div> 
+  <div id="loadimages">
+    <img id="bonbon" src="bonbon.png">
+    <img id="eye" src="eye.jpeg">
+  </div>
+   <div id="randomSentences2">
+    <span class="ho2 ho2_ko"></span> 
+    <span class="subject2 subject2_ko"></span> 
+    <span class="adjective2 adjective2_ko"></span> 
+    <span class="object2 object2_ko"></span>
+    <span class="verb2 verb2_ko"></span><br>
+    <span class="adverb2 adverb2_ko"></span>
+    <span class="emotion2 emotion2_ko"></span>
+  </div>
+  </flexbox>
+  </mist> 
+  <div id="index_lang">
+    <button id="index_en" type="button"></button> 
+  </div> 
+ </load>
+ 
+<script type="text/javascript"> 
+  var i = 0;
+  window.onload =
+function move() {
+ 
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("loadimages");
+    var percent = 100;
+     var id = setInterval(frame, 10);
+    function frame() {
+      if (percent <=0) {
+        clearInterval(id);
+        i = 0;
+         $('title').text("dream20210628");
+
+      } else {
+        percent = percent -0.01;
+        elem.style.filter = "grayscale(" + percent + "%)";
+
+        if ($('.subject_ko').is(':empty') && $('.subject2_ko').is(':empty') &&  percent >90){
+          $('#loading').show();
+          $('load').hide();
+        } else{
+          $('#loading').hide();
+          $('load').show();
+        }
+       }
+    }
+  }
+} 
+      //random sentences
+  var subject = [
+  'I',
+  'then I',
+  'and then',
+  'you',
+  'we',
+  'you',
+  'again you',
+  'short boy',
+  'you',
+  'you somehow'
+], verb = [
+  'walked',
+  'snapped',
+  'lie, ',
+  'remembered...',
+  'chitchatted',
+  'committed',
+  'said',
+  'escaped',
+  'had to choose',
+  'sticky things',
+  'leaned'
+], adjective = [
+  'with white polkadots',
+  'semi-transparent lavender',
+  'small and square',
+  'not so sure',
+  'fan smell hits the nose',
+  'burgundy',
+  'dirty and grimey',
+  'mostly highspirited sometimes a bitch',
+  'sly handsome',
+  'of summer'
+], object = [
+  'swimming pool', 
+  'glass bottle ice wine for 1 person',
+  'chocolate, always',
+  'chocolate',
+  'the scent of asphalt',
+  'an act that would affect our relationship',
+  'sandals in barefoot',
+  'through the crowd',
+  'head on shoulder',
+  'fingerfood',
+  'table customers',
+  'them'
+], verb1 = [
+  '',
+  '',
+  'ate,',
+  'after',
+  'drink',
+  'gone',
+  'drinking wine'
+], adverb = [
+  'ghostly',
+  'as always',
+  'alone',
+  'out of all those foreign bottled beer',
+  'didnt want to drink beer alone', 
+  'all the time',
+  'like nights after school camp',
+  'like a terrace',
+  'face so cold like a feline',
+  'fresh'
+
+],  emotion = [
+  '.',
+  '...!',
+  '',
+  '',
+  '',
+  ',',
+  '?',
+  '-',
+  'haha'
+] 
+
+//random sentences 2
+var subject2 = [
+  'anyhow',
+  'naturally',
+  'for some reason',
+  'I',
+  'we', 
+  'midway',
+  'every',
+  'you', 
+  'now'
+], adjective2 = [
+  'cannot catch with hands',
+  'little',
+  'sometimes',
+  'not certain',
+  'fan smell hits the nose',
+  'burgundy',
+  'mostly unkind',
+  'sly-handsome',
+  'tiny'
+  
+], object2 = [
+  'navy baseball cap', 
+  'us',
+  'head on shoulder',
+  'chocolate',
+  'asphalt odor',
+  'some conduct that might affect the relationship',
+  'sandals in barefoot',
+  'you',
+  'in the crowd',
+  'me',
+  'fingerfood',
+  'table customers'
+], verb2 = [
+  'probably picked',
+  'walked',
+  'remember.',
+  'after',
+  'drink', 
+  'changing',
+  'dont do that, ',
+  'lean',
+  'again, just now',
+  'at me',
+], adverb2 = [
+  'like a dream',
+  'after school camp',
+  'as if there was a promise',
+  'calmly',
+  'since you were drinking wine alone',
+  'just because', 
+  'again',
+  'this place is like...',
+  'catlike',
+  'fresh'
+
+],  emotion2 = [
+  '!',
+  '...',
+  '.',
+  '',
+  '',
+  '',
+  ',',
+  '?',
+  '-',
+  ''
+], ho2 = [
+  'hehe',
+  '',
+  '',
+  'ah ',
+  'yeah ',
+  '',
+  'sure',
+  'okay',
+  '...',
+  '',
+  'me?'
+]
+
+//korean
+  var subjectk = [
+  '나는',
+  '그리고나서 너는',
+  '그리고는',
+  '언니는',
+  '우리는',
+  '언니는',
+  '방금 또 넌',
+  '키작은 남자애가',
+  '언니가',
+  '어쩐 이유로 내가'
+], verbk = [
+  '걸어갔지',
+  '쏘아붙였어',
+  '사기, ',
+  '기억된...',
+  '재잘거렸다',
+  '범했어',
+  '그랬어',
+  '빠져나왔다',
+  '골라야 했다',
+  '달라붙는 것은',
+  '기대었는데'
+], adjectivek = [
+  '하얀색 점박무늬가 있는',
+  '연보라색 투명한',
+  '작은 정방형의',
+  '아무래도 확실치 않은',
+  '선풍기 냄새가 코를 스치는 ',
+  '버건디색의',
+  '까맣게 때묻은',
+  '대체로 의기양양하고 가끔은 쌀쌀맞은',
+  '얍삽하게 잘생긴',
+  '여름의'
+], objectk = [
+  '수영장을', 
+  '유리병에 담긴 1인용 아이스와인을',
+  '초콜릿을 항상',
+  '초콜릿을',
+  '아스팔트 냄새를',
+  '관계에 지장을 줄 만한 행동을',
+  '맨발에 샌들을',
+  '인파 사이를',
+  '어깨에 머리를',
+  '안줏거리를',
+  '테이블손님들',
+  '그애를'
+], verb1k = [
+  '',
+  '',
+  '먹었지,',
+  '지나',
+  '마셔',
+  '가면',
+  '와인 마시는데'
+], adverbk = [
+  '환영처럼',
+  '여느때처럼',
+  '혼자',
+  '수많은 수입 병맥주들 중에 뭔가',
+  '혼자 맥주 먹기도 그래서', 
+  '항상',
+  '흡사 수련회 활동이 끝난 산자락 밤 현장같이',
+  '테라스처럼',
+  '고양잇과 동물처럼 차가운 표정으로',
+  '상쾌하게'
+
+],  emotionk = [
+  '.',
+  '...!',
+  '',
+  '',
+  '',
+  ',',
+  '?',
+  '-',
+  '호호'
+] 
+
+//random sentences 2
+var subject2k = [
+  '아무튼',
+  '자연스레',
+  '어쩐 이유로',
+  '나는',
+  '우리는', 
+  '중간에',
+  '전부',
+  '네가', 
+  '이젠'
+], adjective2k = [
+  '손으로 막 잡아지지 않는',
+  '작은',
+  '가끔은',
+  '아무래도 확실치 않은',
+  '선풍기 냄새가 코를 스치는 ',
+  '버건디색의',
+  '대체로 쌀쌀맞은',
+  '얍삽하게 잘생긴',
+  '조그만'
+  
+], object2k = [
+  '남색 캡모자를', 
+  '우리를',
+  '어깨에 머리를',
+  '초콜릿을',
+  '아스팔트 냄새를',
+  '관계에 지장을 줄 만한 행동을',
+  '맨발에 샌들을',
+  '너를',
+  '인파 사이를',
+  '나를',
+  '안줏거리를',
+  '테이블손님들'
+], verb2k = [
+  '집었던 것 같다',
+  '걸었어',
+  '기억해.',
+  '지나',
+  '마셔', 
+  '변하면서',
+  '그러지 마, ',
+  '기대',
+  '방금 또',
+  '나한테',
+], adverb2k = [
+  '꿈만같게도',
+  '수련회가 끝난 야영장에서',
+  '서로 약속이라도 한 듯이',
+  '태연하게',
+  '너 혼자 와인 마시는데',
+  '그냥', 
+  '다시',
+  '마치 여긴...',
+  '고양이처럼',
+  '상쾌하게'
+
+],  emotion2k = [
+  '!',
+  '...',
+  '.',
+  '',
+  '',
+  '',
+  ',',
+  '?',
+  '-',
+  ''
+], ho2k = [
+  '헤헤',
+  '',
+  '',
+  '아 ',
+  '응',
+  '',
+  '어',
+  '그래',
+  '...',
+  '',
+  '내가?'
+]
+
+
+function shuffle(db) {
+  return db[Math.floor(Math.random() * db.length)];
+} 
+ 
+var toggle = true;
+  $('#index_en').click(function(){
+
+    toggle = !toggle;
+
+    if(toggle){
+      $(this).css({'background':'lightgray'});
+       //eng
+      $('.subject').toggleClass('subject_en',1000); 
+      $('.adjective').toggleClass('adjective_en',1000); 
+      $('.object').toggleClass('object_en',1000); 
+      $('.adverb').toggleClass('adverb_en',1000);
+      $('.verb').toggleClass('verb_en',1000);
+      $(".verb1").toggleClass('verb1_en',1000);
+      $('.emotion').toggleClass('emotion_en',1000);
+      $('.subject2').toggleClass('subject2_en',1000);
+      $('.verb2').toggleClass('verb2_en',1000);
+      $('.adjective2').toggleClass('adjective2_en',1000); 
+      $('.object2').toggleClass('object2_en',1000); 
+      $('.adverb2').toggleClass('adverb2_en',1000);
+      $('.ho2').toggleClass('ho2_en',1000);
+      $('.emotion2').toggleClass('emotion2_en',1000);
+
+      $('.subject').toggleClass('subject_ko',1000);
+      $('.verb').toggleClass('verb_ko',1000);
+      $('.adjective').toggleClass('adjective_ko',1000); 
+      $('.object').toggleClass('object_ko',1000); 
+      $('.adverb').toggleClass('adverb_ko',1000); 
+      $(".verb1").toggleClass('verb1_ko',1000);
+      $('.emotion').toggleClass('emotion_ko',1000);
+      $('.subject2').toggleClass('subject2_ko',1000);
+      $('.verb2').toggleClass('verb2_ko',1000);
+      $('.adjective2').toggleClass('adjective2_ko',1000); 
+      $('.object2').toggleClass('object2_ko',1000); 
+      $('.adverb2').toggleClass('adverb2_ko',1000);
+      $('.ho2').toggleClass('ho2_ko',1000);
+      $('.emotion2').toggleClass('emotion2_ko',1000);
+
+    }
+    else{
+      $(this).css({'background':'#eeee66'});
+      $('title').text('28 Jun 2021');
+      $('.subject').toggleClass('subject_en',1000); 
+      $('.adjective').toggleClass('adjective_en',1000); 
+      $('.object').toggleClass('object_en',1000); 
+      $('.adverb').toggleClass('adverb_en',1000);
+      $('.verb').toggleClass('verb_en',1000);
+      $(".verb1").toggleClass('verb1_en',1000);
+      $('.emotion').toggleClass('emotion_en',1000);
+      $('.subject2').toggleClass('subject2_en',1000);
+      $('.verb2').toggleClass('verb2_en',1000);
+      $('.adjective2').toggleClass('adjective2_en',1000); 
+      $('.object2').toggleClass('object2_en',1000); 
+      $('.adverb2').toggleClass('adverb2_en',1000);
+      $('.ho2').toggleClass('ho2_en',1000);
+      $('.emotion2').toggleClass('emotion2_en',1000);
+
+      //ko
+      $('.subject').toggleClass('subject_ko',1000);
+      $('.verb').toggleClass('verb_ko',1000);
+      $('.adjective').toggleClass('adjective_ko',1000); 
+      $('.object').toggleClass('object_ko',1000); 
+      $('.adverb').toggleClass('adverb_ko',1000); 
+      $(".verb1").toggleClass('verb1_ko',1000);
+      $('.emotion').toggleClass('emotion_ko',1000);
+      $('.subject2').toggleClass('subject2_ko',1000);
+      $('.verb2').toggleClass('verb2_ko',1000);
+      $('.adjective2').toggleClass('adjective2_ko',1000); 
+      $('.object2').toggleClass('object2_ko',1000); 
+      $('.adverb2').toggleClass('adverb2_ko',1000);
+      $('.ho2').toggleClass('ho2_ko',1000);
+      $('.emotion2').toggleClass('emotion2_ko',1000);
+
+    } 
+  });   
+
+  //english
+  setInterval(function(){
+  $('.subject_en').hide().delay(100).text(shuffle(subject)).fadeIn();
+  $('.verb_en').hide().delay(110).text(shuffle(verb)).fadeIn();
+  $('.adjective_en').hide().delay(120).text(shuffle(adjective)).fadeIn();
+  $('.object_en').hide().delay(130).text(shuffle(object)).fadeIn();
+  $('.adverb_en').hide().delay(140).text(shuffle(adverb)).fadeIn();
+  $('.verb1_en').hide().delay(160).text(shuffle(verb1)).fadeIn();
+  $('.emotion_en').hide().delay(170).text(shuffle(emotion)).fadeIn();
+
+  $('.subject2_en').hide().delay(1000).text(shuffle(subject2)).fadeIn();
+  $('.verb2_en').hide().delay(1010).text(shuffle(verb2)).fadeIn();
+  $('.adjective2_en').hide().delay(1020).text(shuffle(adjective2)).fadeIn();
+  $('.object2_en').hide().delay(1030).text(shuffle(object2)).fadeIn();
+  $('.adverb2_en').hide().delay(1040).text(shuffle(adverb2)).fadeIn();
+
+  $('.ho2_en').hide().delay(1060).text(shuffle(ho2)).fadeIn();
+  $('.emotion2_en').hide().delay(1070).text(shuffle(emotion2)).fadeIn();
+ },7000);
+ 
+//korean
+  setInterval(function(){
+  $('.subject_ko').hide().delay(100).text(shuffle(subjectk)).fadeIn();
+  $('.verb_ko').hide().delay(110).text(shuffle(verbk)).fadeIn();
+  $('.adjective_ko').hide().delay(120).text(shuffle(adjectivek)).fadeIn();
+  $('.object_ko').hide().delay(130).text(shuffle(objectk)).fadeIn();
+  $('.adverb_ko').hide().delay(140).text(shuffle(adverbk)).fadeIn();
+  $('.verb1_ko').hide().delay(160).text(shuffle(verb1k)).fadeIn();
+  $('.emotion_ko').hide().delay(170).text(shuffle(emotionk)).fadeIn();
+
+  $('.subject2_ko').hide().delay(1000).text(shuffle(subject2k)).fadeIn();
+  $('.verb2_ko').hide().delay(1010).text(shuffle(verb2k)).fadeIn();
+  $('.adjective2_ko').hide().delay(1020).text(shuffle(adjective2k)).fadeIn();
+  $('.object2_ko').hide().delay(1030).text(shuffle(object2k)).fadeIn();
+  $('.adverb2_ko').hide().delay(1040).text(shuffle(adverb2k)).fadeIn();
+  $('.ho2_ko').hide().delay(1060).text(shuffle(ho2k)).fadeIn();
+  $('.emotion2_ko').hide().delay(1070).text(shuffle(emotion2k)).fadeIn();
+ },7000);
+
+
+//loading
+ 
+</script> 
+</body>
+</html>

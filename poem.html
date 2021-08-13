@@ -3,27 +3,19 @@
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>poem</title>
+	<title>ifeelsoaloneinmy.computer</title>
+  <meta name="google" content="notranslate">
 	<link rel="stylesheet" href="style.css">
 	<script src='https://code.jquery.com/jquery-3.2.1.slim.js'
         integrity='sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=' crossorigin='anonymous'></script>
 <script src="tabledragger.min.js"> </script>
 </head>
-<body id="dark_body"> 
+<body id="dark_body">  
 <div id="tableDiv">
-  <div id="poem_index_en">
-            <span>a</span>
-            <span>b</span>
-            <span>c</span>
-            <span>d</span>
-            <span>e</span>
-            <span>f</span>
-            <span>g</span>
-            <span>h</span>
-            <span>i</span>
-            <span>j</span>
-          </div>
-  <div id="tableFrame">
+  <div id="instruction">
+    <p>drag tablehead and match puzzle</p>
+  </div> 
+<div id="tableFrame">
 <table id="table" class="disable-select">
   <thead>
     <tr>
@@ -104,7 +96,7 @@
         <td></td>
         <td>인어가</td>
         <td></td>
-        <td><button type="button" id="callme" onclick="location.href='main.html'"><span>call<br>me</span></button></td> 
+        <td></td> 
         <td>같구나</td>
         <td></td>
         <td></td>
@@ -113,18 +105,46 @@
         <td>될 것</td>
       </tr>
     </tbody>
-
   </table>
 </div>
   <p id="jeans">- The Problem of Jeans, Shin Hae-Wook</p>
   <div  id="poem_lang">
-   <button id="poem_en" type="button" onclick="location.href='poemen.html'"> </button> 
+   <button id="poem_en" type="button"> </button> 
   </div> 
 </div>
 <script type="text/javascript">	 
- 
-      tableDragger(document.querySelector("#table"));
+   tableDragger(document.querySelector("#table")); 
+  
+  $('th').hover(function(){
+    $('#instruction').css({
+      'color':'pink'
+    });
+  });
+  var i = 0;
 
+  $('#poem_en').click(function(){
+    
+    i = i + 1;
+    if(i%2==0){
+      $('#table').empty();
+      $('table').append('<thead><tr><th class="handle"><span>i</span></th><th class="handle"><span>feel</span></th><th class="handle"><span>with</span></th><th class="handle"><span>you</span></th><th class="handle"><span>the</span></th><th class="handle"><span>most</span></th><th class="handle"><span>when</span></th> <th class="handle"><span>i</span></th><th class="handle"><span>am</span></th><th class="handle"><span>alone</span></th></tr></thead><tbody><tr><td>나를</td><td>입은</td><td>만들<br>어진</td><td>것<br>같아</td><td>입어<br>보고</td>  <td>싶다</td><td>원래는</td> <td>네가</td>  <td>위해</td><td>청바지<br>를</td> </tr> <tr><td>나의</td> <td>뗄<br>수가</td><td>천천히</td><td>청바지</td> <td>수습될<br>수</td> <td>없는</td><td>느낌<br>으로</td><td>눈을</td> <td>다리를</td> <td>없구나</td> </tr>  <tr><td>힘을</td><td>그려<br>본다</td> <td>나의</td><td>어깨에</td> <td>손을</td><td>넣고</td><td>무릎에</td> <td>안에</td><td>주고</td><td>뒷주머니에</td></tr><tr><td>잘못<br>되면</td> <td>머리를</td><td>마음이</td> <td>아프<br>겠지</td>   <td>내가</td> <td>잘되고</td> <td>네가</td>  <td>너의</td>    <td>나는</td>    <td>기대어<br>본다</td> </tr> <tr> <td>부탁<br>하마 </td> <td>얼굴<br>위에</td> <td>나의</td> <td>다리는</td>  <td>얼굴이</td> <td>필요해<br>지면</td> <td>꼭<br>너에게</td><td>내</td><td>그렇<br>지만</td><td>다른</td></tr><tr><td></td><td>인어가</td><td></td><td></td> <td>같구나</td><td></td><td></td><td>금방<br>이라도</td><td></td><td>될 것</td></tr></tbody>');
+      $('#jeans').empty();
+      $('#jeans').append('- The Problem of Jeans, Shin Hae-Wook');
+      $('#instruction').empty();
+      $('#instruction').append('<p>drag tablehead and match puzzle</p>');
+      tableDragger(document.querySelector("#table")); 
+
+    }
+    else{
+      $('#table').empty();
+      $('table').append('<thead><tr><th class="handle"><span>나</span></th><th class="handle"><span>는</span></th><th class="handle"><span>너</span></th><th class="handle"><span>와</span></th><th class="handle"><span>함께</span></th> <th class="handle"><span>일 때</span></th><th class="handle"><span>가장</span></th><th class="handle"><span>혼자</span></th><th class="handle"><span>라고</span></th><th class="handle"><span>느낍<br>니다</span></th></tr></thead><tbody id="tbody_en"><tr><td>I</td><td>wish</td><td>wear<br>ing</td><td>seems<br>like</td><td>one</td><td>the<br>jeans</td><td>you<br>are</td><td>to<br>wear</td><td>made</td> <td>for<br>me</td></tr><tr><td>I</td><td>can<br>not</td><td>of<br>it</td><td>I</td> <td>wave</td> <td>my<br>eyes</td><td>off</td><td>take</td><td>my<br>legs</td><td>slowly<br>into</td></tr><tr><td>the<br>jeans</td><td>hands</td><td>knees</td><td>are</td><td>tense</td><td>in</td><td>poc<br>kets</td><td>tucked</td><td>I</td><td>let</td></tr><tr><td>your</td><td>head</td><td>I</td><td>go</td><td>well</td> <td>shoulder</td> <td>should</td> <td>on<br>my</td><td>and</td><td>you</td></tr><tr> <td>go</td><td>wrong</td><td>I</td><td>need</td> <td>an<br>other</td><td>be<br>hurt</td> <td>should</td> <td>I<br>will</td> <td>face</td> <td>on</td> </tr>  <tr> <td>my<br>face</td>  <td>I<br>will</td> <td>legs</td><td>threaten</td><td>to<br>become</td><td>yours</td><td>but<br>my</td><td>ask<br>for</td><td>mer<br>maids</td><td></td></tr></tbody>');
+        $('#jeans').empty();
+        $('#jeans').append('- 바지의 문제, 신해욱');
+        $('#instruction').empty();
+        $('#instruction').append('<p>머리글을 드래그, 퍼즐 맞추기</p>');
+        tableDragger(document.querySelector("#table")); 
+    }
+  });
 </script> 
 </body>
 </html>

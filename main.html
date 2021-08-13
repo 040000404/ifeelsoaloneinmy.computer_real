@@ -3,11 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>shower in a foreign country</title>
+	<title>ifeelsoaloneinmy.computer</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="tabledragger.min.js"> </script>
-
+ 
  
 </head>
 <body>
@@ -22,49 +21,24 @@
 			</div>
 			 
 	 		
-	 		<div id='mags' class="dayimage"> 
+	 		<div id='main_grid' class="dayimage"> 
         <div class="item item_edges item_edges2"></div>
-        <div class="item item_edges2" id="dream" title="dream" onclick='location.href = "dream20210707.html";'></div>
-        <div class="item item_edges2" id="room" title="room" onclick='location.href = "room.html";'></div>
+        <div class="item item_edges2" id="dream" title="dream" onclick='location.href = "dream20210628.html";'></div>
+        <div class="item item_edges2" id="car" title="car" onclick='location.href = "car.html";'></div>
         
-        <div class="item item_edges" id="hint" title="hint" onclick='location.href = "hint.html";'></div>
-        <div class="item" id="stage">
-          <div id="sentence">
+        <div class="item item_edges" id="poem" title="poem" onclick='location.href = "poem.html";'></div>
+        <div class="item" id="shower" title="shower in a foreign country" onclick='location.href = "shower.html";'>
             
-          </div>
-          <div id="column_index" class="puzzle_index">
-            <span>ㄱ</span>
-            <span>ㄴ</span>
-            <span>ㄷ</span>
-            <span>ㄹ</span>
-            <span>ㅁ</span>
-            <span>ㅂ</span>
-            <span>ㅅ</span>
-            <span>ㅇ</span>
-            <span>ㅈ</span>
-            <span>ㅊ</span>
-          </div>
         </div>
         <div class="item"></div>
 
         <div class="item item_edges" id="row_index_grid">
-          <div id="row_index" class="puzzle_index">
-            <span>a</span>
-            <span>b</span>
-            <span>c</span>
-            <span>d</span>
-            <span>e</span>
-            <span>f</span>
-            <span>g</span>
-            <span>h</span>
-            <span>i</span>
-            <span>j</span>
-          </div>
+          
         </div>
         <div class="item" id="text_puzzle" title="puzzle">
           
         </div>
-        <div class="item" id="end" title="end" onclick='location.href = "end.html";'></div>
+        <div class="item" id="callme" title="callme" onclick='location.href = "callme.html";'></div>
         <div class=" item_edges item_edges3"></div>
         <div class="item_edges3"></div>
         <div class="item"></div>
@@ -112,143 +86,11 @@
     if(chk) {$("input").prop("checked", false).attr("checked", false).removeAttr("checked");}
     }
 };
-
-var content = "";
-for(i=0;i<100;i++){
-  var j = parseInt(i+1); 
-  content += '<div id="' + j + '"class="puzzle_piece">'+'</div>'; 
-} ;
-$('#text_puzzle').append(content);
  
 
-var sentences = [
-  '조름과 호흡곤란에 대한 회피반응이자 보다 진심어린 답장을 위한 노력으로 여기기 마련인 것들 — ',
-  '',
-    '꿈 일기를 쓸 때 가장 재미있는 점은 꿈에서 일어나지도 않은 내용을 서술하는 문장들을 만들어 붙이는 일이다.',  
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '어차피 꿈은 금방 까먹어서 며칠만 지나고 읽어도 어디가 진짜 꿈인지 거짓말인지 분간하지 못하게 된다.',   
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '' ,
-    '그렇게 되면 일기는 꿈도 아니고 현실도 아니고 제 3의 현장에 대한 서술이 된다.',   
-    '페이지와 페이지 사이에 끼워넣을 거짓말들을 저민다.',   
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '꿈 일기를 쓰는 것보다도 중요한 일이 있다면은 네게 답장하기 위한 코스를 밟는 것이야.',  
-    '1.  동거인들이 잠든 시간에 샤워를 하고 향기나는 것을 몸에 뿌릴 것.',  
-    '2. 몸과 머리카락을 말리지 않고 맨발로 나갈 것.',
-    '3. 지구대 앞 벤치에 앉아서 전화를 켤 것.',
-    '',
-    '',
-    '',
-    '',
-    '' ,
-    '이렇게 하면 어느 외국의 바닷가에서 물놀이를 마치고 씻은 후 젖어있는 상태로 근처를 돌아다니는 착각이 든단다.',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-
-    '잠자기, 가족과 같은 편이 주는 온기를 간절히 바라되 그것을 철저히 외면하기, 집앞 버스정류장을 지나는 모든 버스를 타고 종점까지 가기 등.',
-'조름에 대한 공포가 커질수록 잠이 많아졌다.',
- '잠이 오지 않을 때도 잠을 청했다. ',
- '',
-    '',
-    '',
-    '',
-    '' ,
-'밥을 먹고 바로 누워 음식이 같이 눕는 게 느껴질 때에도 잠을 청했다.',
-'낮에도 자고 밤에도 잤다. ',
-'',
-    '',
-    '',
-    '',
-    '',
-    '',
-'하루에 열네 시간 넘게 잠을 잤다. ',
-'',
-    '',
-    '',
-    '',
-    '',
-    '',
-'자기 위해 누워 있었다.',
-'이렇게 많이 자는 것에 대해 다음 사실을 알게 된 이후로 죄책감을 느끼지 않게 되었는데 꿈에서는 조름에 대한 알레르기 반응이 일어나지 않기 때문이다. ',
-'',
-    '',
-    '',
-    '',
-    '',
-    '',
-'꿈속에서는 혼자되기 위해 필사적으로 노력하지 않아도 된다.',
-'',
-    '',
-    '',
-    '',
-    '',
-    '' ,
-    '',
-    '',
-    '',
-    '',
-    '' ,
-    '',
-    '',
-    '',
-    '',
-    '' 
-];
-     console.log(sentences.length);
-
-  $("#text_puzzle div").each(function(){
-    var j = parseInt(this.id);
-    if(j%10==0){
-      $(this).css({
-        'border-bottom':'1px solid rgba(0,0,0,0.5)'
-      });
-    }else{
-    $(this).css({
-      'border-right':'1px solid rgba(0,0,0,0.5)',
-      'border-bottom':'1px solid rgba(0,0,0,0.5)'
-
-  });}
-    $(this).hover(function(){
-      var i = parseInt(this.id-1);
-       $('#sentence').text(sentences[i]); 
-       if(sentences[i]!=''){
-        $(this).css({
-          'background':'rgba(255,255,255,0.5)'
-        })
-       }
-
-    })
-  }); 
+ 
+     
+ 
  
 </script>
 </body>
