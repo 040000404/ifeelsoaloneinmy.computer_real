@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ifeelsoaloneinmy.computer</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+     
+ 
+</head>
+<body>
+	<layer>
+	 <default>
+		<div class="content">
+	 		<div id='mags' class="credits"> 
+         <div id="credits_text">
+        	<p><work_title>"dream"</work_title> 28/6/2021~19/7/2021<br><br><work_title>" puzzle"</work_title><br><ko>신해욱, 바지의 문제</ko><br> <a id="tabledragger" href="https://sindu12jun.github.io/table-dragger/">tabledragger.min.js</a>, 28/3/2021~16/8/2021<br><br><work_title>"saver"</work_title><br> Canon PowerShot G9, 27/3/2021~26/4/2021<br><br><work_title>"shower in a foreign country"</work_title><br><ko> 아상블라주 이미지 제작</ko><br> <i>Magnus Star</i>,<br> 26/6/2021~20/8/2021<br><br></p>
+         
+        </div>
+        <div id="dial_box">
+<!--         	<img id="moon"src="moon.jpeg">
+ -->        </div>
+        <div id="callmebutton"><a id="mailme" href="mailto:haryunglee@gmail.com">콜미</a></div>
+
+      </div> 
+			
+		</div>
+		<div id="end_lang">
+      <button id="end_en" type="button"> </button> 
+    </div>
+	 </default>
+	 
+	</layer>
+ <script>  
+ 	var i = 0;
+ 	$('#end_en').click(function(){
+ 		i = i + 1;
+    if(i%2==0){ 
+ 		$('#credits_text').empty();
+ 		$('#credits_text').append('<p><work_title>"dream"</work_title> 28/6/2021~19/7/2021<br><br><work_title>" puzzle"</work_title><br><ko>신해욱, 바지의 문제</ko><br> <a id="tabledragger" href="https://sindu12jun.github.io/table-dragger/">tabledragger.min.js</a>, 28/3/2021~16/8/2021<br><br><work_title>"saver"</work_title><br> Canon PowerShot G9, 27/3/2021~26/4/2021<br><br><work_title>"shower in a foreign country"</work_title><br><ko> 아상블라주 이미지 제작</ko><br> <i>Magnus Star</i>,<br> 26/6/2021~20/8/2021<br><br></p>');
+ 		 	$('#callmebutton').empty();
+ 		 	$('#callmebutton').append('<a id="mailme" href="mailto:haryunglee@gmail.com">콜미</a>');
+ 	}
+ 	else{
+ 		$('#credits_text').empty();
+ 		$('#credits_text').append('<p><work_title>"꿈"</work_title><br> 28/6/2021~19/7/2021<br><br><work_title>" 퍼즐"</work_title><br> The Problem of Jeans,<br>  Shin Hae Hae-Wook<br><a id="tabledragger" href="https://sindu12jun.github.io/table-dragger/">tabledragger.min.js</a>, 28/3/2021~16/8/2021<br><br><work_title>"세이버"</work_title><br> Canon PowerShot G9, 27/3/2021~26/4/2021<br><br><work_title>"외국에서 샤워하기"</work_title><br> assemblage artwork by <i>Magnus Star</i>,<br> 26/6/2021~20/8/2021<br><br></p>');
+ 		$('#callmebutton').empty();
+ 		$('#callmebutton').append('<a id="mailme" href="mailto:haryunglee@gmail.com">callme</a>');
+ 	}
+ 	})
+	 
+</script>
+</body>
+</html>

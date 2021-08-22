@@ -7,39 +7,50 @@
 	<link rel="stylesheet" href="style2.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="tabledragger.min.js"> </script>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
 
  
 </head>
 <body>
 	<layer>
+    <div id="index_loading">
+<!--         <img id="dessert" src="moon.jpeg">
+ -->        <div id="empty"></div>
+        <div id="myProgress">
+          <div id="myBar"></div>
+        </div>
+    </div>
 	<default>
+    
 		<div class="content day">
+      
 			<div id="lamp" class="daylamp null">
 				<label class="switch">
   					<input type="checkbox">
-  					<span class="slider"></span>
+  					<span class="slider dayswitch"></span>
 				</label>
 			</div>
 			 
 	 		
 	 		<div id='mags' class="dayimage"> 
         
-        <div class="item item_edges item_edges2 item_day item_edges_day item_edges2_day null"></div>
-        <div class="item item_edges2 item_day item_edges2_day links daylink dream_day" id="dream" title="dream" onclick="location.href = 'dream20210628.html';"></div>
+        <div class="item item_edges item_edges2 item_day item_edges_day item_edges2_day links daylink dream_day" id="dream"  onclick="location.href = 'dream20210628.html';"></div>
         <div class="item item_edges2 item_day item_edges2_day null"></div>
+        <div class="item item_edges2 item_day item_edges2_day links daylink puzzle_day" id="puzzle"  onclick='location.href = "poem.html";'></div>
         
-        <div class="item item_edges item_day item_edges_day links daylink car_day" id="car" title="car" onclick="location.href = 'car.html';"></div>
+        <div class="item item_edges item_day item_edges_day"></div>
         <div class="item item_day daystage" id="stage">
            <div id="sentence"></div>
         </div>
-        <div class="item item_day links daylink puzzle_day" id="puzzle" title="puzzle" onclick='location.href = "poem.html";'></div>
+        <div class="item item_day null"></div>
 
-        <div class="item item_edges item_day item_edges_day null">
+        <div class="item item_edges item_day item_edges_day links daylink car_day" id="car"  onclick="location.href = 'car.html';">
            
         </div>
-        <div class="item item_day links daylink shower_day" id="shower" title="shower" onclick='location.href = "text2.html";'>
+        <div class="item item_day null">
         </div>
-        <div class="item item_day">
+        <div class="item item_day links daylink shower_day" id="shower" onclick='location.href = "shower.html";'>
           
         </div>
         <div class="item_edges item_edges3 item_edges_day item_edges3_day"></div>
@@ -54,6 +65,37 @@
 
 		</layer>
  <script>  
+  //load
+    var i = 0;
+    var url = "index2.html";
+  window.onload =
+  function move() {
+ 
+  if (i == 0) {
+    i = 1;
+    var percent = 0;
+    var elem = document.getElementById("myBar"); 
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (percent > 100) {
+        clearInterval(id);
+        i = 0;
+        $(location). attr('href',url)
+         
+       
+ 
+      } else {
+        percent = percent +.1;
+        elem.style.width = percent + "%";
+        $('#index_loading').show();
+        $('default').css({
+          'filter':'blur(5px) hue-rotate(-40deg)'
+        });
+         
+       }
+    }
+  }
+} 
   $(document).ready(function() {
     $('input:checkbox').removeAttr('checked');
   });
@@ -67,7 +109,6 @@
 		if(toggle){
 			$('.content').toggleClass('night',1000);
 			$('#lamp').toggleClass('nightlamp',1000);
-			$('#die').toggleClass('nightbutton',1000); 
 			$('.slider').toggleClass('nightswitch',1000); 
 			$('layer').toggleClass('nightshift',1000);
 			$('default').toggleClass('nightbox',1000);
@@ -91,7 +132,7 @@
 			$('.content').toggleClass('day',1000); 
       $(".links").toggleClass('daylink',1000); 
 			$('#lamp').toggleClass('daylamp',1000);
-			$('#die').toggleClass('daybutton',1000);
+      $('.slider').toggleClass('dayswitch',1000); 
 			$("#mags").toggleClass('dayimage',1000);
       $("#main_en").toggleClass('daylang',1000); 
       $(".links").toggleClass('daylink',1000); 
@@ -116,16 +157,13 @@
   var i = 0;
     $('#sentence').empty();
       $('#car').hover(function(){
-        $('#sentence').text('car');
+        $('#sentence').text('saver');
       });
       $('#shower').hover(function(){
-        $('#sentence').text('shower in a foreign country');
-      });
-      $('#callme').hover(function(){
-        $('#sentence').text('callme');
-      });
+        $('#sentence').text('외국에서 샤워하기');
+      }); 
       $('#dream').hover(function(){
-        $('#sentence').text('dream 20210628');
+        $('#sentence').text('꿈');
       });
       $('#puzzle').hover(function(){
         $('#sentence').text('puzzle');
@@ -138,16 +176,13 @@
     if(i%2==0){
       $('#sentence').empty();
       $('#car').hover(function(){
-        $('#sentence').text('car');
+        $('#sentence').text('saver');
       });
       $('#shower').hover(function(){
-        $('#sentence').text('shower in a foreign country');
-      });
-      $('#callme').hover(function(){
-        $('#sentence').text('callme');
-      });
+        $('#sentence').text('외국에서 샤워하기');
+      }); 
       $('#dream').hover(function(){
-        $('#sentence').text('dream 20210628');
+        $('#sentence').text('꿈');
       });
       $('#puzzle').hover(function(){
         $('#sentence').text('puzzle');
@@ -160,16 +195,13 @@
     else{
       $('#sentence').empty();
       $('#car').hover(function(){
-        $('#sentence').text('자동차');
+        $('#sentence').text('세이버');
       });
       $('#shower').hover(function(){
-        $('#sentence').text('외국에서 샤워하기');
-      });
-      $('#callme').hover(function(){
-        $('#sentence').text('콜미');
+        $('#sentence').text('shower in a foreign country');
       });
       $('#dream').hover(function(){
-        $('#sentence').text('꿈 20210628');
+        $('#sentence').text('dream');
       });
       $('#puzzle').hover(function(){
         $('#sentence').text('퍼즐');

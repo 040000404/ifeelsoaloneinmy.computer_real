@@ -4,58 +4,250 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ifeelsoaloneinmy.computer</title>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <meta name="google" content="notranslate">
 	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="tabledragger.min.js"> </script>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
+
+ 
 </head>
 <body>
-	<default>
-	<div class="content day" id="maintext">  
-	<div id="lamp" class="daylamp">
-		<label class="switch">
-  			<input type="checkbox">
-  			<span class="slider"></span>
-		</label>
-	</div>
- 	<p>it isn't easy to feel perfectly on my own, surrounded by an apartment complex. Apartment forest. color sprayed metal fountains and the botany uhh the botany. so naive the goddess of landscape would cry away. same species, same topiary i've lived and seen in three different apartment “brands” my whole life and all the same. rhododendron and boxwood. green boxwood. dry boxwood. box wood. i learned that boxwood flower represents constancy. d o they want me to live in constancy .  d o they not want me to reply to you   for good                </p>
-	<div id="phone">
-    			<div id="phonescreen">
-        			<p id="dial"></p>
-    			</div>
-    			<div id="keypad">
-					<div>
-						<button type="button" class="number">1</button>
-						<button type="button" class="number">2</button>
-						<button type="button" class="number">3</button>
-					</div>
-					<div>
-						<button type="button" class="number">4</button>
-						<button type="button" class="number">5</button>
-						<button type="button" class="number">6</button>
-					</div>
-					<div>
-						<button type="button" class="number">7</button>
-						<button type="button" class="number">8</button>
-						<button type="button" class="number">9</button>
-					</div>
-					<div>
-						<button type="button" class="number">*</button>
-						<button type="button" class="number">0</button>
-						<button type="button" class="number">#</button>
-					</div>
-					</div>
-					<button type="button" id="callbutton">&nbsp;call&nbsp;</button>
+	<layer>
+	<default_text>
+		<div class="text_content day">
+			<div id="lamp" class="daylamp">
+				<label class="switch">
+  					<input type="checkbox">
+  					<span class="slider dayswitch"></span>
+				</label>
+			</div>
+			 
+	 		
+	 		<div id='mags' class="dayimage"> 
+          <div id="text_grid">
+            <div id="wall_left" class="wall_left_bg_day">
+              <div class="wall_left_day" title="artwork by magnus star"id="wall_left_image"></div>
+            </div>
+            <div id="wall_right">
+              <div id="dream20210707">
+                <div id="randomSentences3">
+            <span class="subject"></span>
+            <span class="adjective"></span><br>
+            <span class="object"></span>
+            <span class="verb"></span>
+            <span class="adverb"></span>
+        </div>
+        <div id="randomSentences4">
+            <span class="ho2"></span> 
+            <span class="subject2"></span> 
+            <span class="verb1"></span>
+            <span class="adjective2"></span>
+            <span class="object2"></span>
+            <span class="verb2"></span><br>
+          <span class="adverb2"></span>
+            <span class="emotion2"></span>
+        </div>
 
-	</div>   
-</div> 
-	</default>
+                </div>   
+               <div id="text_select">
+                 <div id="1"></div>
+                 <div id="2"></div>
+                 <div id="3"></div>
+                 <div id="4"></div>
+                 <div id="5"></div>
+                 <div id="6"></div>
+                 <div id="7"></div>
+                 <div id="8"></div>
+                 <div id="9"></div>
+                 <div id="10"></div>
+                 <div id="11"></div>
+              </div>
+              <div id="text_scroll" class="scroll_content">
+                <p id="text_scroll_content" class="text_day"></p>
+              </div>
+            </div>
+          </div>
+      </div>
+         
+      </div>  
+        <div  id="main_lang">
+          <button id="main_en" class="daylang"type="button"> </button> 
+        </div> 
+			</default>
 
-     
-  </div> 
-	
-</body>
-<script type="text/javascript">
-	$(document).ready(function() {
+		</layer>
+ <script>  
+      //random sentences
+  var subject = [
+  '너가',
+  '엄마 나',
+  '엄마',
+  '선생은',
+  '계단이',
+  '나는',
+  '암튼 그는',
+  '그곳은',
+  '얼마 후' 
+], adjective = [
+  '나한테 ',
+  '곧',
+  '이제',
+  '좁은데',
+  '끝나자마자',
+  '',
+  '그런 사람이었어',
+  '행복을 줬으니까',
+  '',
+  '',
+  '노르스름한',
+  '흔들리는',
+  '얇은'
+],object = [
+  '행복을', 
+  '행복을', 
+  '시간은 일곱 시 오십오 분',
+  '식당을',
+  '메밀전병 피를',
+  '고목나무 식탁 위에',
+  '피아노학원에',
+  '밥',
+  '비행기 모드를',
+  '가방을',
+  '피아노 한 대',
+  '그애를',
+  '낮게 웃는 소리'
+], verb = [
+  '줬으니까','줬으니까',
+  '펼치고 있었어',
+  '찢어댔어','찢어댔어',
+  '갔고',
+  '먹어야 해',
+  '켜야 해',
+  '운영하신다고',
+  '들려',
+  '',
+  '전화해',
+  '사라졌다고'
+], adverb = [
+  '지하철 조명',
+  '코팅지에',
+  '접시가 없어서',
+  '이미',
+  '...',
+  '',
+  '',
+  '.',
+  '뒤로'
+] 
+
+//random sentences 2
+var ho2 = [
+  '어서,',
+  '',
+  '',
+  '아 ',
+  '응',
+  '',
+  '어',
+  '그래',
+  '...',
+  '',
+  '싫다',
+  '아'
+],
+  subject2 = [
+  '얼마 후',
+  '그렇게',
+  '선생님',
+  '나는',
+  '그곳은', 
+  '중간에',
+  '전부',
+  '', 
+  '나'
+], verb1 = [
+  '사라졌어요',
+  '재채기해요',
+  '기억해요.',
+  '출국해요',
+  '여덟시 반...',
+  '안 파네요',
+  '애꾸눈에'
+], adjective2 = [
+  '안경 쓴',
+  '작은', 
+  '좁은',
+  '서울 각지의',
+  '그런',
+  '같이 수업 듣는',
+  '팔 것 같은'
+  
+], object2 = [  
+  '사람',
+  '피아노', 
+  '사람이었습니다',
+  '데를',
+  '애'
+
+], adverb2 = [
+  '이제',
+  '어떻게',
+  '어서',
+  '진짜',
+  '시위를 위해', 
+  '타일건물 꼭대기층', 
+  '',
+  '얇아서'
+
+],verb2 = [
+  '먹어야 해요', 
+  '옮겼을까요',
+  '지나서',
+  '운영하셨지요',
+  '날아가나요',
+  '걸어요'
+], emotion2 = [
+  '',
+  '...',
+  '.',
+  '',
+  '',
+  '밝네요 아직',
+  ',',
+  '?',
+  '-',
+  '고개를 내두르며',
+  '격투기에 대해 이야기할 때마다'
+]
+
+function shuffle(db) {
+  return db[Math.floor(Math.random() * db.length)];
+}
+
+setInterval(function(){
+  $('.subject').hide().delay(100).text(shuffle(subject)).fadeIn();
+  $('.verb').hide().delay(110).text(shuffle(verb)).fadeIn();
+  $('.adjective').hide().delay(120).text(shuffle(adjective)).fadeIn();
+  $('.object').hide().delay(130).text(shuffle(object)).fadeIn();
+  $('.adverb').hide().delay(140).text(shuffle(adverb)).fadeIn();
+  $('.verb').hide().delay(150).text(shuffle(verb)).fadeIn();
+  // $('.verb1').hide().delay(160).text(shuffle(verb1)).fadeIn();
+  // $('.emotion').hide().delay(170).text(shuffle(emotion)).fadeIn();
+
+  $('.subject2').hide().delay(1000).text(shuffle(subject2)).fadeIn();
+  $('.verb1').hide().delay(1010).text(shuffle(verb1)).fadeIn();
+  $('.adjective2').hide().delay(1020).text(shuffle(adjective2)).fadeIn();
+  $('.object2').hide().delay(1030).text(shuffle(object2)).fadeIn();
+  $('.adverb2').hide().delay(1040).text(shuffle(adverb2)).fadeIn();
+  $('.verb2').hide().delay(1050).text(shuffle(verb2)).fadeIn();
+  $('.emotion2').hide().delay(1070).text(shuffle(emotion2)).fadeIn();
+ },10000);
+ 
+
+
+  $(document).ready(function() {
     $('input:checkbox').removeAttr('checked');
   });
 
@@ -66,7 +258,7 @@
 		toggle = !toggle;
 
 		if(toggle){
-			$('.content').toggleClass('night',1000);
+			$('.text_content').toggleClass('night',1000);
 			$('#lamp').toggleClass('nightlamp',1000);
 			$('#die').toggleClass('nightbutton',1000); 
 			$('.slider').toggleClass('nightswitch',1000); 
@@ -74,14 +266,26 @@
 			$('default').toggleClass('nightbox',1000);
 			$("#mags").toggleClass('nightimage',1000);
       $("#main_en").toggleClass('nightlang',1000);
+      $("#wall_left_image").toggleClass('wall_left_night',1000);
+      $("#wall_left").toggleClass('wall_left_bg_night',1000);
+      $('#text_scroll_content').toggleClass('text_night',1000);
+      $('#easter').toggleClass('easter_night',1000);
 		}
 		else{
       $('input:checkbox').removeAttr('checked');
-			$('.content').toggleClass('day',1000); 
+			$('.text_content').toggleClass('day',1000); 
+
 			$('#lamp').toggleClass('daylamp',1000);
 			$('#die').toggleClass('daybutton',1000);
+      $('.slider').toggleClass('dayswitch',1000); 
+
 			$("#mags").toggleClass('dayimage',1000);
       $("#main_en").toggleClass('daylang',1000); 
+      $("#wall_left_image").toggleClass('wall_left_day',1000);
+      $("#wall_left").toggleClass('wall_left_bg_day',1000);
+      $('#text_scroll_content').toggleClass('text_day',1000);
+      $('#easter').toggleClass('easter_day',1000);
+
 		}	
 	});
   window.onpageshow = function(event) {
@@ -91,31 +295,133 @@
     }
 };
 
-	
-	var tel = $('#dial').text();
+// var content = "";
+// for(i=0;i<30;i++){
+//   var j = parseInt(i+1); 
+//   content += '<div id="' + j + '"class="puzzle_piece">'+'</div>'; 
+// } ;
+// $('#text_puzzle').append(content);
 
-	$('.number').click(function(){
-  		var no = $(this).text();
-      	$( "#dial" ).append(no); 
-      	tel = $('#dial').text();
-	});
-	$('#callbutton').click(function(){
-      	window.open('tel:'+ tel); 
-	});
+ 
+ 
+ var sentences = [
+ //1
+    '모여있을수록 죽는 것들이 풍기는 감정은 모여있는 상태가 인내하는 조름(smother)과 관련이 있다는 것을 알게 되었다. 이들은 자기 목숨을 담보로 네트워크의 안전을 유지하고자 땀을 나누고 살갗을 비벼댄다. 결과는 안전한 죽음이다. 서로의 목을 끈적하고 애정 어리게 조르고 있다.',
+    //2
+    '조름에 대한 상상은 더위에 거슬리는 허벅지를 주물러댈 때처럼 실감나서, 세상에 물질 아닌 생각은 없다고 믿게 만든다. 조름에 대한 상상은 터미널의 공기를 떠올리면 될 것이다. 두텁고 뜨듯한 구름층을 이루고 있는 초미세 입자들.',
+    //3
+    '초미세 입자에 대한 알레르기 반응으로 호흡곤란이 왔다.<br><br>(저는 이것의 역효과로 운동을 하지도 않으면서 기능성 스포츠웨어를 찾아 입는 사람이 되었수다. 그들이 가장 무해하다고 제시했던 소재에 대한 반동으로서, 그리고 폐가 숨쉴 수 없다면 적어도 피부는 숨쉴 수 있도록.)',
+    //4
+    '인터넷에서 만난 c는 한 사람에 대해 오갈 수 있는 이야기에는 양이 정해져 있다고 했다. 한 사람에 대해 오갈 수 있는 이야기가 안개의 무리나 발효차를 떠다니는 배양균 덩어리같은 형태로 존재한다고 믿을 때, 이들은 늘어날수록 늘어나거나 줄어들수록 줄어드는 순환 방식에 대해 무지하다. 만들어지고 사라지는 이야기의 양은 항상 동일하다. 그런 곳의 모습을 머릿속으로 상상해보자면 저녁의 길거리에서는 목소리보다 식기들끼리 부딪히는 소리가 크게 들리고 그들이 쓰는 말의 곡조는 새소리와 비슷하여 배경음악처럼 드문드문하다.  ',
+    //5
+    '한 사람에 대해 오갈 수 있는 이야기는 발화되는 순간 그곳에 자신이 있는지 없는지에 따라 두 종류의 물질 사이를 오간다. 두 물질은—마치 오존과 햇빛처럼—하나가 다른 것을 보호하거나 변화시킬 수 있다. 모르는 사람들에 대해 생각하거나 잠재된 미래를 떠올리느라 잠을 못 이루는 사람 (푸른빛 자외선이 대부분이고 그것을 막아주는 투명한 오존층이 얇게 깔려 있다). 낮의 물리와 가족의 활기에 몸을 맡기는 사람 (대기중 오존은 강한 햇빛과 반응하여 발생).  ',
+    //6
+    '조름과 호흡곤란에 대한 회피반응이자 보다 진심어린 답장을 위한 노력으로 여기기 마련인 것들 — 잠자기, 가족과 같은 편이 주는 온기를 바라되 그것을 철저히 외면하기, 집앞을 지나는 모든 버스를 타고 종점까지 가기 등.',
+    //7
+    '조름에 대한 공포가 커질수록 잠이 많아졌다. 잠이 오지 않을 때에도 잠을 청했다. 식사 후 잠을 청했다. 낮에도 자고 밤에도 잤다. 하루에 열네 시간 넘게 잠을 잤다. 자기 위해 누워 있었다. 이렇게 많이 자는 것에 대해 다음 사실을 알게 된 이후로 죄책감을 느끼지 않게 되었는데, 꿈에서는 초미세입자에 대한 알레르기 반응이 일어나지 않기 때문이다. 꿈속에서는 혼자되기 위해 노력하지 않아도 된다. 깨어나면 사라지는 것들이 소중하다. (깨어난 뒤에야 꿈에 대해 생각할 수 있으므로, 꿈이 위시하는 감각은 조름보다 파멸이 크다.)',
+    //8
+    '나는 c가 말한 세계 그중에서도 말하지 않는 편이 아름답다고 여겨지는 군집에 들어가고 싶다. 온 방이 밤하늘의 색에 집어 삼켜진 시간에만 지내고 싶다. 나의 생존 감각을 그들의 기준에 맞게 교정한다. 태양인의 기질을 져버려야 한다. 깨어있는 동안에는 그 시간 사이사이에 끼울 거짓말을 저미는 일에 공들여야 한다. 이치에 맞게 행동하려는 태양인의 관성을 져버려야 한다. 굽거나 볶은 음식을 먹지 않을 것. 식은 국물에 비리고 말캉한 덩어리들이 떠다니는 음식이나 오랜 시간동안 재워 신맛이 나는 절임류를 만들어 먹을 것. 골반을 깎아서 비늘같은 몸을 만들 것.',
 
-	var creditsKO ='<br>이하령 / itsamode<br><br>아상블라주 작업 Magnus Star / magstar37 <br><br> 고마운 사람들 angel4angel, lovelag'
-	var creditsEN = '&lt;shower in a foreign country&gt;<br><br>Haryung Lee / itsamode<br><br>assemblage by Magnus Star / magstar37 <br><br> special thanks to angel4angel, lovelag'
-	var i = 0;
-	$('#end_lang').click(function(){
-		i = i + 1;
-		if(i%2==0){
-			$('credits').html(creditsEN);
-		}
-		else{
-		$('credits').html(creditsKO);
-		 };
-	}); 
+    //9
+    '좋은 것들을 만들어내기를 원했던 게 아니라<br>어떻게 하면 좋은 것들을 느낄 방법을 만들 수 있는지요,<br>슬픈 것을 보고 슬픔을 느끼고 행복한 것을 보고 끔찍함을 느끼기 위해 애써요. <br>자전거 대신 자전거 거치대의 바퀴 음각을 만드는 사람이요.<br><br><br>너그럽게<br> 내숭이 허용되었을 때<br>이제는 <br>징그러운 말들<br>호기롭고 게으르고 불충분한 단어들만이 내 곁을 지킨다네<br>미친듯이 나를 변호해야 한다',
+
+     //10
+     '깨어 있는 시간에 가장 중요한 일은 꿈 일기를 쓸 때—만약 이것조차 쓸 수 없다면 일어나려 하지 않았을 것이다—꿈에서 일어나지도 않은 내용을 서술하는 문장들을 붙이는 일이다. 어차피 꿈은 금방 까먹어서 며칠만 지나고 읽어도 어디가 진짜 꿈인지 거짓말인지 분간하지 못하게 된다. 그렇게 되면 일기는 꿈도 아니고 현실도 아니고 제 3의 현장에 대한 서술이 된다.',
+     //11
+     'c에게 답장하기 위해 만들었던 코스<br><br>1. 모두 잠든 시간에 샤워를 하고 머리카락을 말리지 않는다.<br>2. 향기나는 것을 몸에 뿌린다.<br>3. 여름 신발에 옷가지는 가볍게 걸치고 나간다.<br>4. 지구대 앞 벤치에 앉으면 답장을 할 수 있다.<br><br>위 코스는 어느 외국의 바닷가에서 물놀이를 마치고 씻은 후 젖어있는 상태에서 근처 정원이나 아스팔트 도로를 돌아다니는 듯한 착각을 발휘한다.<br><div id="easter" class="easter_day" onclick="location.href = \'bye.html\'"></div>'
+
+  ];
+  var sentencesen = [
+    'Things that die when they are together: I realized the feelings they illuminate come from the \'smother\' that they endure. Sweating and rubbing skin to uphold a safe network, with their own lives as collateral. The result is a safe death. Strangling each other\'s necks with affection like rubber saps.',
+    'Imagining the \'smother\' is so real as kneading a sweaty thigh under the heat, it makes you believe thoughts are material. Imagining its physique should do by thinking about the air at a terminal. Layers of thick warm clouds formed by microparticles.',
+    'I suffered from shortness of breath, an allergic reaction to microparticles.<br>(As a side effect, I became someone who does not exercise but is keen for high-tech sportswear. A backlash to the material which they suggested is the most harmless, and if my lungs can\'t breathe, at least should the skin.)',
+    'c, whom I met on the internet, told me there is a fixed amount for every story that can be told about a person. If stories should exist in the form of mist or lumps like cultured bacteria in kombucha tea, they are oblivious of cycling feedback that increases in increase, or decreases to decrease. Every amount of story that appears and disappears are equal. I like to imagine such a place: in street evenings, tableware clinking is louder than voices, and the tone of their language is similar to birdchirps, thin like background music.',
+    ' A story that can be told about one person switches between two types of matter, depending on whether they were there or not the moment it was told. The two can either protect or change each another, like ozone and sunlight. Counting minutes of night imagining their potential future, and people unmet (mostly blue ultraviolet light, and a thin layer of clear ozone barricading it). Or giving themselves in to the dynamics of day, and the vitality of kindred.',
+    'The incubation belt of the forest is a hug and a smother.',
+    'I discovered myself sleeping more as the fear of the \'smother\' became worse. Sleeping even when I couldn\'t sleep. Sleeping after meals. Sleeping day and night. Over fourteen hours a day. Lay down to sleep. Haven\'t felt guilty about sleeping so much since discovering that, in my dreams I don\'t get allergic to the microparticles. You don\'t have to try to be alone in your dreams. The preciousness of things that disappear when you wake up. (Since it is only possible to think about dreams after waking up, the senses they evoke are closer to destruction rather than the smother.)',
+    'I pray to enter the world that c spoke of, especially the cohort where it is considered more beautiful not to speak. I pray for my entire time to be in a room swallowed up by the hue of night. I reform my survival senses to their standards. Must let go of the temperament of the solar people. While awake, direct the effort to slicing lies to weave between the hours. Gotta let go of the inertia of solar people, the inertia to make sense. Not eating grilled or fried food anymore. More like soft lumps floating on top of cold soup or pickles with a sour tang by soaking for a long time. Shave my pelvis to make a scaly body.',
+    '', 
+     'One important thing to do in waking hours is keeping a dream journal——pasting sentences that describe what didn\'t happen in my dreams. After all, dreams are quickly forgotten, so reading it after a few days, it is a powerless procedure trying to tell lies from true dreams. Thus the journal becomes a record of neither a dream nor reality, but a description of the third scene.',
+     'Procedure taken to reply to c<br><br>1. everyone is asleep<br>2. shower<br>3. perfume, slippers, and leave the house <br>immediately (hair has to be still wet)<br>4. soda from the nearest 24hr store5. bench by color sprayed metal fountain that seems to be ever-dry<br>6. phone<br><br>the procedure is an illusion makes me feel like, i\'m vacationing by the beach having taken a shower after swimming and then walking around the garden still dripping wet.<br><div id="easter" class="easter_day" onclick="location.href = \'bye.html\'"></div>'
+
+  ];
+  var j = 0;
+  var k;
+  $('#main_en').click(function(){
+    j = j + 1;
+   
+     $("#text_select div").each(function(){
+   if(j%2==0){
+    $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentences[k-1]);
+    $(this).hover(function(){
+      var i = parseInt(this.id);
+      $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentences[i-1]);
+      k = i;
+       
+  }); 
+    $(this).click(function(){
+      var i = parseInt(this.id);
+      $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentences[i-1]);
+      k = i;
+       
+  }); 
+  }
+  else{
+    $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentencesen[k-1]);
+    $(this).hover(function(){
+      var i = parseInt(this.id);
+      $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentencesen[i-1]);
+      k = i;
+    }); 
+    $(this).click(function(){
+      var i = parseInt(this.id);
+      $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentencesen[i-1]);
+      k = i;
+    });  
+  }
+  });
+  });
 
 
+  $("#text_select div").each(function(){
+   if(j%2==0){
+    $(this).hover(function(){
+      var i = parseInt(this.id);
+      $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentences[i-1]);
+      k = i;
+       
+  }); 
+    $(this).click(function(){
+      var i = parseInt(this.id);
+      $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentences[i-1]);
+      k = i;
+       
+  }); 
+  }
+  else{
+    $(this).hover(function(){
+      var i = parseInt(this.id);
+      $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentencesen[i-1]);
+      k = i;
+    }); 
+    $(this).click(function(){
+      var i = parseInt(this.id);
+      $('#text_scroll_content').empty();
+      $('#text_scroll_content').append(sentencesen[i-1]);
+      k = i;
+    });  
+  }
+  });
+ 
 </script>
+</body>
 </html>

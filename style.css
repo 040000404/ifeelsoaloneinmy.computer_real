@@ -20,7 +20,7 @@
 html, body{
   height:  100%;
   /*background-color: *//*RGB(213, 210, 210); *//*#d4ccc9;*/
-  background-color: #b8b2b2;
+  background-color: #cbcbcb;
 
   overflow: hidden;
 }
@@ -63,7 +63,7 @@ html, body{
 	border: none;
 } 
 #index_en{
- 	background: #eeee66; 
+ 	background: #eeeeee; 
  	position: absolute;
  	height: 15px;   
  	left: 3px;
@@ -99,24 +99,22 @@ html, body{
 
 }
 #poem_en{
- 	background: #eeee66; 
- 	border: none;
- 	box-shadow: 0 0 2px 2px #050012 inset; 
- 	transition: all 1s ease-in-out;
+ 	background: #eeeeee; 
+ 	border: 1px solid darkgray;
+ 	box-shadow: 0px -2px 3px 1px white inset; 
  	opacity: 0.5;
  	height: 15px; 
 }
 
 #poem_en:hover{
-		background:white;
+		background:#ff2235;
 		cursor: pointer;
  }
 #poem_ko{
 	background:lightgray;
 	border: none;
-	 box-shadow: 0 0 2px 2px lightgray; 
- 	transition: all 1s ease-in-out;
-}
+	box-shadow: 0 0 2px 2px lightgray; 
+ }
 #poem_ko:hover{
 		background:lightgray;
 		cursor: pointer;
@@ -180,17 +178,27 @@ html, body{
   opacity: 0.5;
 }
 
+ 
+#end_lang button{ 
+ 	width: 30px;
+	height: 15px;
+	border: none; 
+	border-radius: 5px;  
+	background: #83AAEE;
+	box-shadow: 1px 0px 1px 1px rgba(90,90,90,.5);
+ }
 
 #end_lang{
- 	background: #eeee66; 
-	border: none; 
- 	transition: all 1s ease-in-out;
- 	box-shadow: 1px 0 2px 2px #050012 inset ; 
-
-}
-#end_lang:hover{
-		background:white;
-		cursor: pointer;
+	width: 30px;
+	height:  15px;
+	position: absolute;  
+	top: calc(483px - 15px / 2);
+	left: 5px;
+	z-index: -1;  
+ }
+#end_lang button:hover{
+ 		cursor: pointer;
+ 		background: #DADDAE;
  }
 
 /*index.html*/
@@ -397,22 +405,22 @@ poem button{
 #tableFrame{
 	height:  483px;
 	/*display: flex; */
-	background: hsla(0, 0%, 0%, 1);
+	background: #cbd1d4;/*hsla(0, 0%, 0%, 1);*/
 
-background: radial-gradient(circle, hsla(0, 0%, 0%, 1) 0%, hsla(0, 30%, 31%, 1) 33%, hsla(217, 36%, 86%, 1) 62%, hsla(192, 13%, 85%, 1) 83%, hsla(0, 0%, 94%, 1) 100%);
+background: radial-gradient(circle, hsla(0, 0%, 20%, 1)  0%, hsla(0, 30%, 31%, 1) 33%, hsla(217, 36%, 86%, 1) 62%, hsla(192, 13%, 85%, 1) 83%, hsla(0, 0%, 94%, 1)  100%);
 
-background: -moz-radial-gradient(circle, hsla(0, 0%, 0%, 1) 0%, hsla(0, 30%, 31%, 1) 33%, hsla(217, 36%, 86%, 1) 62%, hsla(192, 13%, 85%, 1) 83%, hsla(0, 0%, 94%, 1) 100%);
+background: -moz-radial-gradient(circle, hsla(0, 0%, 20%, 1) 0%, hsla(0, 30%, 31%, 1) 33%, hsla(217, 36%, 86%, 1) 62%, hsla(192, 13%, 85%, 1) 83%, hsla(0, 0%, 94%, 1) 100%);
 
-background: -webkit-radial-gradient(circle, hsla(0, 0%, 0%, 1) 0%, hsla(0, 30%, 31%, 1) 33%, hsla(217, 36%, 86%, 1) 62%, hsla(192, 13%, 85%, 1) 83%, hsla(0, 0%, 94%, 1) 100%);
+background: -webkit-radial-gradient(circle, hsla(0, 0%, 20%, 1) 0%, hsla(0, 30%, 31%, 1) 33%, hsla(217, 36%, 86%, 1) 62%, hsla(192, 13%, 85%, 1) 83%, hsla(0, 0%, 94%, 1) 100%);
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#683838", GradientType=1 );
 
-	 	box-shadow: 0 0 11px 11px  #050012/*RGB(250, 249, 252)*/ inset;
+	 	box-shadow: 0 0 11px 11px  #cbd1d4/*RGB(250, 249, 252)*/ inset;
 
 } 
 
 #instruction{
-	color: #050012;
+	color: #cbd1d4;
 	font-size: 7pt; 
  	font-style: italic;
  	text-align: left;  
@@ -542,7 +550,7 @@ layer{
  
 }
 .day{
-  background: #b8b2b2;
+  background: #b2b2b2;
 	box-shadow: 0 0 5px 5px rgba(240,240,240,0.3) inset;
 
 }
@@ -569,7 +577,7 @@ layer{
 	
  }
 #wall_left_image{
- 	width: calc(315px / 1.5);
+ 	width: calc(420px / 1.5);
 	height: calc(420px / 1.5);
 	margin: 15px;
 	
@@ -581,11 +589,11 @@ layer{
 	background: transparent;
 }
 .wall_left_day{
-	background: url('art_day.jpeg');
+	background: url('daytime.jpg');
 	background-size: cover;
 }
 .wall_left_night{
-	background: url('art_night.jpeg');
+	background: url('nightime.jpg');
 	background-size: cover;
 }
 .scroll_content{
@@ -595,7 +603,7 @@ layer{
 	display: grid; 
 	grid-template-rows: 178px 18px auto;
 	border-left: 1px solid rgba(235,240,255,0.1);
-	box-shadow: 10px 0 10px 22px rgba(220,210,215,0.1);
+	box-shadow: 10px 0 5px 15px rgba(225,215,205,0.1);
 }
 
 #dream20210707{
@@ -617,20 +625,20 @@ layer{
 #text_select{
  	display: grid;
 	height: inherit;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	border: 1px solid rgba(255,255,255,0.3);
 }
 #text_select div{
-	box-shadow: 0px 0 2px 2px rgba(220,210,215,0.9) inset;
+	box-shadow: 0px 0 2px 2px rgba(210,210,210,0.9) inset;
 }
 #text_select div:hover{
 	cursor: pointer;
-	background: rgba(210,230,250,0.9);
-	box-shadow: 0px 0 2px 2px rgba(220,210,215,0.9) inset;
+	background: rgba(250,250,250,0.9);
+	box-shadow: 0px 0 2px 2px rgba(220,220,220,0.9) inset;
 }
  
 #text_scroll{
-	background: rgba(250,250,230,0.3);
+	background: rgba(230,230,230,0.3);
 	height: calc(483px - 178px - 18px - 20px);
 	overflow-y: scroll;
 	overflow-x: hidden; 
@@ -650,6 +658,26 @@ layer{
 .text_night{
 	color: white;
 }
+#easter{
+	border-radius: 100%;
+	width: 15px;
+	height: 15px;
+	background-color: blue;
+	opacity: 0.6;
+	margin: 10px 0px;
+}
+.easter_day{
+		box-shadow: 0 0 3px 3px #c7c2c2 inset;
+
+}
+.easter_night{
+		box-shadow: 0 0 3px 3px #4d4d4e inset;
+
+}
+#easter:hover{
+	cursor: pointer;
+	background-color: red;
+}
 #mags{
 	/*width: 322px;*/  
 	height:  483px;
@@ -660,6 +688,7 @@ layer{
 	background-size: cover; 
  
  }
+
 
 default_grid{ 
 	position: absolute; 
@@ -957,10 +986,101 @@ input:checked + .slider:before {
  
 
 
+/*end*/
+.credits{
+	background-color: white;
+	border-style: double;
+ 
+ }
+ work_title{
+ 	font-family: gulim;
+ }
+#moon{
+	filter: saturate(30%) brightness(2.0);
+	opacity: 0.9;
+	box-shadow: 0px 0px 15px 15px white inset;
+	position: absolute;
+	width: calc(483px * 0.2);
+ height: calc(483px * 0.15);
+	top: 20px;
+	left: -20px;
 
+}
+#gw{ 
+	color: inherit;
+	font-size: 8pt;
+	font-style: italic;
+	border-bottom: 1px solid lightgray;
+}
+#gw:hover, #tabledragger:hover{
+	color: lightgray;
+}
+#credits_text{
+	height: 313px; 
+}
+#credits_text p{
+	background: rgba(230, 230, 238, .9);
+	font-family: serif;
+ 	position: absolute;
+	top: 20px;
+	left: 20px;
+	color: rgba(255,255,245,1);
+	width: calc(483px * 0.39);
+	text-align: left;
+	text-shadow: 1px 0px 0px rgb(100,100,100);
+	background-clip: text; 
+	box-shadow: 0 0 5px 1px white inset;
+
+}
+ko{
+	font-size: 12px;
+	font-family: serif;
+}
+#tabledragger{
+	text-decoration: underline;
+	font-style: italic;
+	color: inherit;
+}
+#mailme{
+	text-decoration: none;
+	font-family: serif;
+}
+#mailme:hover{
+	color: red;
+}
+#dial_box{
+	position: absolute;
+	bottom: 50px;
+	right: 19px;
+	/*background-color: black;*/
+	opacity: 0.7;
+	background-image: url('moon.jpeg');
+	background-position: center;
+	width: calc(284px / 880 * 483);
+	height:calc(330px / 880 * 483);
+	box-shadow: 0 0 5px 3px white inset,0 0 5px 3px white;
+
+}	
+#callmebutton{
+	border-radius: 100%;
+	width: calc(100px / 880 * 483);
+	height: calc(54px / 880 * 483);
+	border: 1px solid rgba(246,220,234);
+	position: absolute;
+	bottom: 10px;
+	right: 69px;
+	background: rgb(255,254,250);
+	font-family: serif;
+	font-style: italic;
+	color: blue;
+	font-size: 9pt;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
 
  /*car*/
-
 .car_content{
 	width: 483px;
 	height: 483px; 
@@ -983,7 +1103,7 @@ input:checked + .slider:before {
 
 #stage{
  	background: rgba(255,255,240,0.3);
-  	box-shadow: 0 0 15px  /*RGB(250, 249, 252)*/ rgba(217, 191, 89,0.5);
+  box-shadow: 0 0 15px  /*RGB(250, 249, 252)*/ rgba(217, 191, 89,0.5);
  	backdrop-filter: blur(1px);
  	display: grid;
  	grid-template-rows: 6fr 1fr;
@@ -1019,7 +1139,7 @@ input:checked + .slider:before {
  	background: transparent;
  }
  .puzzle_piece:hover{ 
- 	background: rgba(200,200,100,0.3);
+ 	background: rgba(200,200,100,0.9);
  	cursor: pointer;
 
  }

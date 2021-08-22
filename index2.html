@@ -4,122 +4,61 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ifeelsoaloneinmy.computer</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style2.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="tabledragger.min.js"> </script>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
 
  
 </head>
 <body>
   <layer>
-  <default_grid>
-    <div></div>  
-    <div class="content_grid day">
- 
-      <div id='index_grid'> 
+  <default>
+    
+    <div class="content day">
+      
+      <div id="lamp" class="daylamp null">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider dayswitch"></span>
+        </label>
+      </div>
+       
+      
+      <div id='mags' class="dayimage"> 
+        
+        <div class="item item_edges item_edges2 item_day item_edges_day item_edges2_day links daylink dream_day" id="dream"  onclick="location.href = 'dream20210628.html';"></div>
+        <div class="item item_edges2 item_day item_edges2_day null"></div>
+        <div class="item item_edges2 item_day item_edges2_day links daylink puzzle_day" id="puzzle"  onclick='location.href = "poem.html";'></div>
+        
+        <div class="item item_edges item_day item_edges_day"></div>
+        <div class="item item_day daystage" id="stage">
+           <div id="sentence"></div>
+        </div>
+        <div class="item item_day null"></div>
 
-        <div class="item links" id="dream" onclick='location.href = "dream20210628.html";'>
-          <p>꿈 20210628</p>
-        </div>
-        <div class="item">
-          
-        </div>
-        <div class="item links" id="poetry" onclick='location.href = "poem.html";'>
-          <p>puzzle</p>
-        </div>
-        <!-- <div class="item ">
-        </div> -->
-        <div class="item item_edges links car_day" id="car" onclick='location.href = "car.html";'>
-          <p>car</p>
-        </div>
-<!-- 
-        <div class="item item_edges2">
-        </div>
-        <div class="item" id="stage">
-        </div>
-        <div class="item item_edges"> 
-        </div>
-
-        <div class="item item_edges2" >
+        <div class="item item_edges item_day item_edges_day links daylink car_day" id="car"  onclick="location.href = 'car.html';">
            
         </div>
-        <div class="item item_edges2">
+        <div class="item item_day null">
+        </div>
+        <div class="item item_day links daylink shower_day" id="shower" onclick='location.href = "shower.html";'>
           
         </div>
-         -->
-        <div class="links shower_day"id="shower" onclick='location.href = "shower.html";' >
-          <p>외국에서 샤워하기</p>
-        </div>
-        <!-- <div class="item"></div> 
-        <div class="item item_edges3" > 
-           
-        </div>
-         <div class="item item_edges3"> 
-         </div> -->
-         <div class="item item_edges3 links callme_day" id="callme"onclick='location.href = "callme.html";' > 
-          <p>callme</p>
-        </div>
-         
+        <div class="item_edges item_edges3 item_edges_day item_edges3_day"></div>
+        <div class="item_edges3 item_edges3_day"></div>
+        <div class="item item_day"></div>
       </div> 
         </div>
         <div  id="main_lang">
-   <button id="main_en" type="button"> </button> 
-  </div> 
+          <button id="main_en" class="daylang"type="button"> </button> 
+        </div> 
       </default>
 
     </layer>
  <script>   
-  var i = 0;
-  $('#main_lang').click(function(){
-    i = i + 1;
-    if(i%2==1){
-      $('#dream').empty();
-      $('#dream').append('<p>dream 20210628</p>');
-
-      $('#poetry').empty();
-      $('#poetry').append('<p>퍼즐</p>');
-      
-      $('#car').empty();
-      $('#car').append('<p>자동차</p>');
- 
-      $('#shower').empty();
-      $('#shower').append('<p>shower in a foreign country</p>');
-
-      $('#callme').empty();
-      $('#callme').append('<p>콜미</p>');
-      $('#main_en').css({
-        'background': '#FFDFAE' 
-      });
-      
-    } 
-
-    else{
-      $('#dream').empty();
-      $('#dream').append('<p>꿈 20210628</p>'); 
-
-      $('#poetry').empty();
-      $('#poetry').append('<p>puzzle</p>');
-
-      $('#car').empty();
-      $('#car').append('<p>car</p>');
-
-      $('#room').empty();
-      $('#room').append('<p>room</p>');
-
-      $('#shower').empty();
-      $('#shower').append('<p>외국에서 샤워하기</p>');
-
-      $('#callme').empty();
-      $('#callme').append('<p>callme</p>');
-      $('#main_en').css({
-        'background': '#FB551E'
-      });
-    };
-
-  }); 
-
-  //lamp
-   $(document).ready(function() {
+  $(document).ready(function() {
     $('input:checkbox').removeAttr('checked');
   });
 
@@ -130,22 +69,45 @@
     toggle = !toggle;
 
     if(toggle){
-      $('.content_grid').toggleClass('night',1000);
+      $('.content').toggleClass('night',1000);
       $('#lamp').toggleClass('nightlamp',1000);
-      $('#die').toggleClass('nightbutton',1000); 
       $('.slider').toggleClass('nightswitch',1000); 
       $('layer').toggleClass('nightshift',1000);
       $('default').toggleClass('nightbox',1000);
-      $("#index_grid").toggleClass('nightimage',1000);
+      $("#mags").toggleClass('nightimage',1000);
       $("#main_en").toggleClass('nightlang',1000);
+      $(".links").toggleClass('nightlink',1000); 
+      $("#dream").toggleClass('dream_night',1000); 
+      $("#puzzle").toggleClass('puzzle_night',1000); 
+      $("#car").toggleClass('car_night',1000); 
+      $("#shower").toggleClass('shower_night',1000); 
+      $("#callme").toggleClass('callme_night',1000); 
+      $("#stage").toggleClass('nightstage',1000); 
+      $(".item").toggleClass('item_day',1000); 
+      $(".item_edges").toggleClass('item_edges_day',1000); 
+      $(".item_edges2").toggleClass('item_edges2_day',1000); 
+      $(".item_edges3").toggleClass('item_edges3_day',1000); 
+
     }
     else{
       $('input:checkbox').removeAttr('checked');
-      $('.content_grid').toggleClass('day',1000); 
+      $('.content').toggleClass('day',1000); 
+      $(".links").toggleClass('daylink',1000); 
       $('#lamp').toggleClass('daylamp',1000);
-      $('#die').toggleClass('daybutton',1000);
-      $("#index_grid").toggleClass('dayimage',1000);
+      $('.slider').toggleClass('dayswitch',1000); 
+      $("#mags").toggleClass('dayimage',1000);
       $("#main_en").toggleClass('daylang',1000); 
+      $(".links").toggleClass('daylink',1000); 
+      $("#dream").toggleClass('dream_day',1000); 
+      $("#puzzle").toggleClass('puzzle_day',1000); 
+      $("#car").toggleClass('car_day',1000); 
+      $("#shower").toggleClass('shower_day',1000); 
+      $("#callme").toggleClass('callme_day',1000); 
+      $("#stage").toggleClass('daystage',1000); 
+      $(".item").toggleClass('item_night',1000); 
+      $(".item_edges").toggleClass('item_edges_night',1000); 
+      $(".item_edges2").toggleClass('item_edges2_night',1000); 
+      $(".item_edges3").toggleClass('item_edges3_night',1000); 
     } 
   });
   window.onpageshow = function(event) {
@@ -154,7 +116,66 @@
     if(chk) {$("input").prop("checked", false).attr("checked", false).removeAttr("checked");}
     }
 };
+  var i = 0;
+    $('#sentence').empty();
+      $('#car').hover(function(){
+        $('#sentence').text('lifesaver');
+      });
+      $('#shower').hover(function(){
+        $('#sentence').text('외국에서 샤워하기');
+      }); 
+      $('#dream').hover(function(){
+        $('#sentence').text('꿈');
+      });
+      $('#puzzle').hover(function(){
+        $('#sentence').text('puzzle');
+      });
+      $('.null').hover(function(){
+        $('#sentence').text('');
+      });
+  $('#main_lang').click(function(){
+    i = i + 1;
+    if(i%2==0){
+      $('#sentence').empty();
+      $('#car').hover(function(){
+        $('#sentence').text('lifesaver');
+      });
+      $('#shower').hover(function(){
+        $('#sentence').text('외국에서 샤워하기');
+      }); 
+      $('#dream').hover(function(){
+        $('#sentence').text('꿈');
+      });
+      $('#puzzle').hover(function(){
+        $('#sentence').text('puzzle');
+      });
+      $('.null').hover(function(){
+        $('#sentence').text('');
+      });
+       
+    } 
+    else{
+      $('#sentence').empty();
+      $('#car').hover(function(){
+        $('#sentence').text('라이프세이버');
+      });
+      $('#shower').hover(function(){
+        $('#sentence').text('shower in a foreign country');
+      });
+      $('#dream').hover(function(){
+        $('#sentence').text('dream');
+      });
+      $('#puzzle').hover(function(){
+        $('#sentence').text('퍼즐');
+      });
+      $('.null').hover(function(){
+        $('#sentence').text('');
+      });
+     
+    };
 
+  }); 
+ 
 </script>
 </body>
 </html>
