@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ifeelsoaloneinmy.computer</title>
-	<link rel="stylesheet" href="style2.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ifeelsoaloneinmy.computer</title>
+  <link rel="stylesheet" href="style2.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="tabledragger.min.js"> </script>
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
@@ -13,71 +13,20 @@
  
 </head>
 <body>
-  <mobile>
-    <sky> 
-      <stars></stars>
-      <numbertocall></numbertocall>
-    </sky>
-   
-    <beach> 
-       <beach_sand> 
-      </beach_sand>
-          <div id="keypad_numbers">
-            <div id="row1"> 
-            <button type="button" class="number number1">1</button>
-            <button type="button" class="number number2">2</button>
-            <button type="button" class="number number3">3</button>
-            </div>
-            <div id="row2">
-            <button type="button" class="number number1">4</button>
-            <button type="button" class="number number2">5</button>
-            <button type="button" class="number number3">6</button>
-            </div>
-            <div id="row3">
-            <button type="button" class="number number1">7</button>
-            <button type="button" class="number number2">8</button>
-            <button type="button" class="number number3">9</button>
-            </div>
-            <div id="row4">
-            <button type="button" class="number number1">*</button>
-            <button type="button" class="number number2">0</button>
-            <button type="button" class="number number3">#</button>
-          </div>
-          <div id="row5">
-            <button type="button" class="number number1">+</button>
-            <button type="button" id="makecall" class="number2">✆</button>
-            <button type="button" id="remove" class="number3">←</button>
-          </div>
-          </div>
-          <div id="callbutton">
-            <button type="button" >&nbsp;•&nbsp;do not let your words reign you&nbsp;•&nbsp;</button>
-          </div>
-    </beach>
-  </mobile>
-	<layer>
+  <layer>
+  <default>
     
-    <div id="index_loading">
-        <div id="callbutton">
-            <button type="button">
-            &nbsp;•&nbsp;do not let your words reign you&nbsp;•&nbsp;</button>
-        </div>
-        <div id="myProgress">
-          <div id="myBar"></div>
-        </div>
-    </div>
-	<default>
-    
-		<div class="content day">
+    <div class="content day">
       
-			<div id="lamp" class="daylamp null">
-				<label class="switch">
-  					<input type="checkbox">
-  					<span class="slider dayswitch"></span>
-				</label>
-			</div>
-			 
-	 		
-	 		<div id='mags' class="dayimage"> 
+      <div id="lamp" class="daylamp null">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider dayswitch"></span>
+        </label>
+      </div>
+       
+      
+      <div id='mags' class="dayimage"> 
         
         <div class="item item_edges item_edges2 item_day item_edges_day item_edges2_day links daylink dream_day" id="dream"  onclick="location.href = 'dream20210628.html';"></div>
         <div class="item item_edges2 item_day item_edges2_day null"></div>
@@ -101,90 +50,31 @@
         <div class="item_edges3 item_edges3_day"></div>
         <div class="item item_day"></div>
       </div> 
-				</div>
+        </div>
         <div  id="main_lang">
           <button id="main_en" class="daylang"type="button"> </button> 
         </div> 
-			</default>
+      </default>
 
-		</layer>
- <script>  
-  //load
-    var i = 0;
-    var url = "hello.html";
-  window.onload =
-  function move() {
-  if(window.innerWidth > 414){
-  if (i == 0) {
-    i = 1;
-    var percent = 0;
-    var elem = document.getElementById("myBar"); 
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (percent > 100) {
-        clearInterval(id);
-        i = 0;
-        $(location). attr('href',url);
-        
-      } else {
-        percent = percent +.1;
-        elem.style.width = percent + "%";
-        $('#index_loading').show();
-        $('default').css({
-          'filter':'blur(5px) hue-rotate(-40deg)'
-        });
-         
-       }
-    }
-  }
-  }
-  else{
-    $('body').css({
-      'height':window.innerHeight,
-      'width':window.innerWidth
-    });
-
-    $('mobile').css({
-      'height':window.innerHeight,
-      'width':window.innerWidth 
-    });
-   }
-} 
-  //call
-  var tel = $('numbertocall').text();
-  $('.number').click(function(){
-      var no = $(this).text();
-        $( "numbertocall" ).append(no); 
-        tel = $('numbertocall').text(); 
-  });
-   $('#remove').click(function(){
-    var removed = tel.substring(0,tel.length-1); 
-    console.log(removed);
-    $('numbertocall').empty();
-    $('numbertocall').append(removed);
-    tel = removed;
-  });
-  $('#makecall').click(function(){
-        window.open('tel:'+ tel); 
-  });
-  
+    </layer>
+ <script>   
   $(document).ready(function() {
     $('input:checkbox').removeAttr('checked');
   });
 
-	//lamp
-	var toggle = false;
-	$('.switch').click(function(){
+  //lamp
+  var toggle = false;
+  $('.switch').click(function(){
 
-		toggle = !toggle;
+    toggle = !toggle;
 
-		if(toggle){
-			$('.content').toggleClass('night',1000);
-			$('#lamp').toggleClass('nightlamp',1000);
-			$('.slider').toggleClass('nightswitch',1000); 
-			$('layer').toggleClass('nightshift',1000);
-			$('default').toggleClass('nightbox',1000);
-			$("#mags").toggleClass('nightimage',1000);
+    if(toggle){
+      $('.content').toggleClass('night',1000);
+      $('#lamp').toggleClass('nightlamp',1000);
+      $('.slider').toggleClass('nightswitch',1000); 
+      $('layer').toggleClass('nightshift',1000);
+      $('default').toggleClass('nightbox',1000);
+      $("#mags").toggleClass('nightimage',1000);
       $("#main_en").toggleClass('nightlang',1000);
       $(".links").toggleClass('nightlink',1000); 
       $("#dream").toggleClass('dream_night',1000); 
@@ -198,14 +88,14 @@
       $(".item_edges2").toggleClass('item_edges2_day',1000); 
       $(".item_edges3").toggleClass('item_edges3_day',1000); 
 
-		}
-		else{
+    }
+    else{
       $('input:checkbox').removeAttr('checked');
-			$('.content').toggleClass('day',1000); 
+      $('.content').toggleClass('day',1000); 
       $(".links").toggleClass('daylink',1000); 
-			$('#lamp').toggleClass('daylamp',1000);
+      $('#lamp').toggleClass('daylamp',1000);
       $('.slider').toggleClass('dayswitch',1000); 
-			$("#mags").toggleClass('dayimage',1000);
+      $("#mags").toggleClass('dayimage',1000);
       $("#main_en").toggleClass('daylang',1000); 
       $(".links").toggleClass('daylink',1000); 
       $("#dream").toggleClass('dream_day',1000); 
@@ -218,8 +108,8 @@
       $(".item_edges").toggleClass('item_edges_night',1000); 
       $(".item_edges2").toggleClass('item_edges2_night',1000); 
       $(".item_edges3").toggleClass('item_edges3_night',1000); 
-		}	
-	});
+    } 
+  });
   window.onpageshow = function(event) {
     if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
     var chk = $("input").is(":checked");

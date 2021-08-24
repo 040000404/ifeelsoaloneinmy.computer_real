@@ -45,7 +45,62 @@ html, body{
   user-select: none;
 }
 
+/*back*/
+.arrow {
+  border: solid #a3a3a3;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  position: absolute;
+  top: 4px;
+  left: 6px;
+ 
+} 
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
 
+#back{
+	position: absolute;
+	top: -15px;
+	right: 3px;
+	width: 20px;
+	height: 15px; 
+	border-radius: 9%;
+	border: 1px solid darkgray;
+	border-bottom: transparent;
+	background-color: transparent;
+	opacity: 1;
+	z-index: -1;
+}
+
+#back:hover{
+	cursor: pointer;  
+	background: rgba(150,150,150,0.2);
+	border-bottom: transparent;
+
+} 
+#poem_back{
+	position: absolute;
+	top: 1px; 
+	right: 3px;
+	width: 20px;
+	height: 15px; 
+	border-radius: 9%;
+	border: 1px solid darkgray;
+	border-bottom: transparent;
+	background-color: transparent;
+	opacity: 1;
+	z-index: -1;
+}
+
+#poem_back:hover{
+	cursor: pointer;  
+	background: rgba(150,150,150,0.2);
+	border-bottom: transparent;
+
+}
 /*lang*/
  
 #index_lang{
@@ -427,7 +482,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", en
  	margin-bottom: 5px;
   }
 table{
-	height:  483px;
+	height: 483px;
+	width: 483px;
 }
 th{
 	font-style: italic;
@@ -583,7 +639,7 @@ layer{
 	
 }
 .wall_left_bg_day{
-	background: rgba(160,190,240,0.1);
+	background: rgba(255,255,255,0.4);
 }
 .wall_left_bg_night{
 	background: transparent;
@@ -626,14 +682,14 @@ layer{
  	display: grid;
 	height: inherit;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	border: 1px solid rgba(255,255,255,0.3);
+	border: 1px solid rgba(255,255,250,0.3);
 }
 #text_select div{
 	box-shadow: 0px 0 2px 2px rgba(210,210,210,0.9) inset;
 }
 #text_select div:hover{
 	cursor: pointer;
-	background: rgba(250,250,250,0.9);
+	background: rgba(250,250,245,0.8);
 	box-shadow: 0px 0 2px 2px rgba(220,220,220,0.9) inset;
 }
  
@@ -653,21 +709,26 @@ layer{
 	padding: 15px;
 }
 .text_day{
-	color: black;
+	color: #0e0e0e;
 }
 .text_night{
-	color: white;
+	color: #dcd7d3;
 }
 #easter{
-	border-radius: 100%;
-	width: 15px;
-	height: 15px;
-	background-color: blue;
-	opacity: 0.6;
+	border-radius: 5%;
+	width: 80px;
+	height: 60px;
+	background: url('bonbon.png');
+	background-size: cover;
+background-clip: padding-box;
+
+	border-style: double;
+	border-color: #bbbaa7;
+ 
 	margin: 10px 0px;
 }
 .easter_day{
-		box-shadow: 0 0 3px 3px #c7c2c2 inset;
+	box-shadow: 0 0 3px 3px #aaa inset;
 
 }
 .easter_night{
@@ -676,7 +737,8 @@ layer{
 }
 #easter:hover{
 	cursor: pointer;
-	background-color: red;
+	border-color: #888;
+ 
 }
 #mags{
 	/*width: 322px;*/  
@@ -1019,7 +1081,7 @@ input:checked + .slider:before {
 	height: 313px; 
 }
 #credits_text p{
-	background: rgba(230, 230, 238, .9);
+	background: rgba(230, 230, 238, .1);
 	font-family: serif;
  	position: absolute;
 	top: 20px;
@@ -1259,6 +1321,7 @@ animation: phonecolor 10s ease infinite alternate;
 }
 
 /*mobile*/
+
 @media ( max-width: 414px ) {
 
 	body{
