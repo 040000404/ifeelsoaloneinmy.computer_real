@@ -33,21 +33,21 @@
             <div id="wall_right">
               <div id="dream20210707">
                 <div id="randomSentences3">
-            <span class="subject"></span>
-            <span class="adjective"></span><br>
-            <span class="object"></span>
-            <span class="verb"></span>
-            <span class="adverb"></span>
+            <span class="subject subject_ko"></span>
+            <span class="adjective adjective_ko"></span><br>
+            <span class="object object_ko"></span>
+            <span class="verb verb_ko"></span>
+            <span class="adverb adverb_ko"></span>
         </div>
         <div id="randomSentences4">
-            <span class="ho2"></span> 
-            <span class="subject2"></span> 
-            <span class="verb1"></span>
-            <span class="adjective2"></span>
-            <span class="object2"></span>
-            <span class="verb2"></span><br>
-          <span class="adverb2"></span>
-            <span class="emotion2"></span>
+            <span class="ho2 ho2_ko"></span> 
+            <span class="subject2 subject2_ko"></span> 
+            <span class="verb1 verb1_ko"></span>
+            <span class="adjective2 adjective2_ko"></span>
+            <span class="object2 object2_ko"></span>
+            <span class="verb2 verb2_ko"></span><br>
+          <span class="adverb2 adverb2_ko"></span>
+            <span class="emotion2 emotion2_ko"></span>
         </div>
 
                 </div>   
@@ -74,13 +74,17 @@
       </div>  
         <div  id="main_lang">
           <button id="main_en" class="daylang"type="button"> </button> 
+        </div>
+        <div id="back" onclick="location.href ='hello.html'">
+          <i class="arrow left"></i> 
         </div> 
 			</default>
 
 		</layer>
  <script>  
       //random sentences
-  var subject = [
+      //ko
+  var subject_ko = [
   '너가',
   '엄마 나',
   '엄마',
@@ -90,7 +94,7 @@
   '암튼 그는',
   '그곳은',
   '얼마 후' 
-], adjective = [
+], adjective_ko = [
   '나한테 ',
   '곧',
   '이제',
@@ -104,7 +108,7 @@
   '노르스름한',
   '흔들리는',
   '얇은'
-],object = [
+],object_ko = [
   '행복을', 
   '행복을', 
   '시간은 일곱 시 오십오 분',
@@ -118,7 +122,7 @@
   '피아노 한 대',
   '그애를',
   '낮게 웃는 소리'
-], verb = [
+], verb_ko = [
   '줬으니까','줬으니까',
   '펼치고 있었어',
   '찢어댔어','찢어댔어',
@@ -130,7 +134,7 @@
   '',
   '전화해',
   '사라졌다고'
-], adverb = [
+], adverb_ko = [
   '지하철 조명',
   '코팅지에',
   '접시가 없어서',
@@ -143,7 +147,7 @@
 ] 
 
 //random sentences 2
-var ho2 = [
+var ho2_ko = [
   '어서,',
   '',
   '',
@@ -157,7 +161,7 @@ var ho2 = [
   '싫다',
   '아'
 ],
-  subject2 = [
+  subject2_ko = [
   '얼마 후',
   '그렇게',
   '선생님',
@@ -167,7 +171,7 @@ var ho2 = [
   '전부',
   '', 
   '나'
-], verb1 = [
+], verb1_ko = [
   '사라졌어요',
   '재채기해요',
   '기억해요.',
@@ -175,7 +179,7 @@ var ho2 = [
   '여덟시 반...',
   '안 파네요',
   '애꾸눈에'
-], adjective2 = [
+], adjective2_ko = [
   '안경 쓴',
   '작은', 
   '좁은',
@@ -184,14 +188,14 @@ var ho2 = [
   '같이 수업 듣는',
   '팔 것 같은'
   
-], object2 = [  
+], object2_ko = [  
   '사람',
   '피아노', 
   '사람이었습니다',
   '데를',
   '애'
 
-], adverb2 = [
+], adverb2_ko = [
   '이제',
   '어떻게',
   '어서',
@@ -201,14 +205,14 @@ var ho2 = [
   '',
   '얇아서'
 
-],verb2 = [
+],verb2_ko = [
   '먹어야 해요', 
   '옮겼을까요',
   '지나서',
   '운영하셨지요',
   '날아가나요',
   '걸어요'
-], emotion2 = [
+], emotion2_ko = [
   '',
   '...',
   '.',
@@ -222,31 +226,190 @@ var ho2 = [
   '격투기에 대해 이야기할 때마다'
 ]
 
+//en
+ var subject_en = [
+  'you',
+  'mom I',
+  'mama',
+  'teacher',
+  'the stairs',
+  'I',
+  'anyhow he',
+  'there',
+  'soon after' 
+], adjective_en = [
+  'at me ',
+  'soon',
+  'now',
+  'cramped',
+  'as soon as it ends',
+  '',
+  'was that kind of person',
+  'made me happy',
+  '',
+  '',
+  'gold',
+  'withering',
+  'thin'
+],object_en = [
+  'happy', 
+  'happy', 
+  'at seven fifty five',
+  'restaurant',
+  'buckwheat pancake skin',
+  'on the old oaken table',
+  'piano academy',
+  'meal',
+  'airplane mode',
+  'bag',
+  'piano',
+  'the kid',
+  'low voices laughing'
+], verb_en = [
+  'gave','gave',
+  'was unfolding',
+  'tearing','tearing',
+  'left',
+  'gotta eat',
+  'gotta switch on',
+  'running',
+  'can hear',
+  '',
+  'callme',
+  'disappeared'
+], adverb_en = [
+  'subway lights',
+  'on coated paper',
+  'because no plates',
+  'already',
+  '...',
+  '',
+  '',
+  '.',
+  'backwards'
+] 
+
+//random sentences 2
+var ho2_en = [
+  'hurry,',
+  '',
+  '',
+  'ah ',
+  'sure',
+  '',
+  'yes',
+  'okay',
+  '...',
+  '',
+  'no',
+  'ahah'
+],
+  subject2_en = [
+  'soon after',
+  'just like that',
+  'teacher',
+  'I',
+  'the place', 
+  'in the middle',
+  'every',
+  '', 
+  'I'
+], verb1_en = [
+  'disappeared',
+  'sneeze',
+  'can remember.',
+  'departing',
+  'eight thirty...',
+  'not selling',
+  'cyclops'
+], adjective2_en = [
+  'wearing glasses',
+  'little', 
+  'tight',
+  'all around Seoul',
+  'that kind of',
+  'take classes together',
+  'as if they would sell'
+  
+], object2_en = [  
+  'person',
+  'piano', 
+  'person of a kind',
+  'some place',
+  'kid'
+
+], adverb2_en = [
+  'now',
+  'how',
+  'hurry',
+  'really',
+  'at the protest', 
+  'top floor of the tile building', 
+  '',
+  'thin'
+
+],verb2_en = [
+  'gotta eat', 
+  'did they move',
+  'passed by',
+  'ran',
+  'will it fly',
+  'walk'
+], emotion2_en = [
+  '',
+  '...',
+  '.',
+  '',
+  '',
+  'still bright',
+  ',',
+  '?',
+  '-',
+  'shaking heads',
+  'every time talking about martial arts'
+]
+
 function shuffle(db) {
   return db[Math.floor(Math.random() * db.length)];
 }
 
 setInterval(function(){
-  $('.subject').hide().delay(100).text(shuffle(subject)).fadeIn();
-  $('.verb').hide().delay(110).text(shuffle(verb)).fadeIn();
-  $('.adjective').hide().delay(120).text(shuffle(adjective)).fadeIn();
-  $('.object').hide().delay(130).text(shuffle(object)).fadeIn();
-  $('.adverb').hide().delay(140).text(shuffle(adverb)).fadeIn();
-  $('.verb').hide().delay(150).text(shuffle(verb)).fadeIn();
-  // $('.verb1').hide().delay(160).text(shuffle(verb1)).fadeIn();
-  // $('.emotion').hide().delay(170).text(shuffle(emotion)).fadeIn();
+  $('.subject_ko').hide().delay(100).text(shuffle(subject_ko)).fadeIn();
+  $('.verb_ko').hide().delay(110).text(shuffle(verb_ko)).fadeIn();
+  $('.adjective_ko').hide().delay(120).text(shuffle(adjective_ko)).fadeIn();
+  $('.object_ko').hide().delay(130).text(shuffle(object_ko)).fadeIn();
+  $('.adverb_ko').hide().delay(140).text(shuffle(adverb_ko)).fadeIn();
+  $('.verb_ko').hide().delay(150).text(shuffle(verb_ko)).fadeIn();
+   
 
-  $('.subject2').hide().delay(1000).text(shuffle(subject2)).fadeIn();
-  $('.verb1').hide().delay(1010).text(shuffle(verb1)).fadeIn();
-  $('.adjective2').hide().delay(1020).text(shuffle(adjective2)).fadeIn();
-  $('.object2').hide().delay(1030).text(shuffle(object2)).fadeIn();
-  $('.adverb2').hide().delay(1040).text(shuffle(adverb2)).fadeIn();
-  $('.verb2').hide().delay(1050).text(shuffle(verb2)).fadeIn();
-  $('.emotion2').hide().delay(1070).text(shuffle(emotion2)).fadeIn();
+  $('.subject2_ko').hide().delay(1000).text(shuffle(subject2_ko)).fadeIn();
+  $('.verb1_ko').hide().delay(1010).text(shuffle(verb1_ko)).fadeIn();
+  $('.adjective2_ko').hide().delay(1020).text(shuffle(adjective2_ko)).fadeIn();
+  $('.object2').hide().delay(1030).text(shuffle(object2_ko)).fadeIn();
+  $('.adverb2_ko').hide().delay(1040).text(shuffle(adverb2_ko)).fadeIn();
+  $('.verb2_ko').hide().delay(1050).text(shuffle(verb2_ko)).fadeIn();
+  $('.ho2_ko').hide().delay(1060).text(shuffle(ho2_ko)).fadeIn();
+
+  $('.emotion2_ko').hide().delay(1070).text(shuffle(emotion2_ko)).fadeIn();
  },10000);
  
+  setInterval(function(){
+  $('.subject_en').hide().delay(100).text(shuffle(subject_en)).fadeIn();
+  $('.verb_en').hide().delay(110).text(shuffle(verb1_en)).fadeIn();
+  $('.adjective_en').hide().delay(120).text(shuffle(adjective_en)).fadeIn();
+  $('.object_en').hide().delay(130).text(shuffle(object_en)).fadeIn();
+  $('.adverb_en').hide().delay(140).text(shuffle(adverb_en)).fadeIn();
+  $('.verb1_en').hide().delay(160).text(shuffle(verb1_en)).fadeIn(); 
 
+  $('.subject2_en').hide().delay(1000).text(shuffle(subject2_en)).fadeIn();
+  $('.verb2_en').hide().delay(1010).text(shuffle(verb2_en)).fadeIn();
+  $('.adjective2_en').hide().delay(1020).text(shuffle(adjective2_en)).fadeIn();
+  $('.object2_en').hide().delay(1030).text(shuffle(object2_en)).fadeIn();
+  $('.adverb2_en').hide().delay(1040).text(shuffle(adverb2_en)).fadeIn();
 
+  $('.ho2_en').hide().delay(1060).text(shuffle(ho2_en)).fadeIn();
+  $('.emotion2_en').hide().delay(1070).text(shuffle(emotion2_en)).fadeIn();
+ },10000);
   $(document).ready(function() {
     $('input:checkbox').removeAttr('checked');
   });
@@ -310,9 +473,9 @@ setInterval(function(){
     //2
     '조름에 대한 상상은 더위에 거슬리는 허벅지를 주물러댈 때처럼 실감나서, 세상에 물질 아닌 생각은 없다고 믿게 만든다. 조름에 대한 상상은 터미널의 공기를 떠올리면 될 것이다. 두텁고 뜨듯한 구름층을 이루고 있는 초미세 입자들.',
     //3
-    '초미세 입자에 대한 알레르기 반응으로 호흡곤란이 왔다.<br><br>(저는 이것의 역효과로 운동을 하지도 않으면서 기능성 스포츠웨어를 찾아 입는 사람이 되었수다. 그들이 가장 무해하다고 제시했던 소재에 대한 반동으로서, 그리고 폐가 숨쉴 수 없다면 적어도 피부는 숨쉴 수 있도록.)',
+    '초미세 입자에 대한 알레르기 반응으로 호흡곤란이 왔다.<br><br>(저는 이것의 역효과로 운동을 하지도 않으면서 기능성 스포츠웨어를 찾아 입는 사람이 되었습니다. 그들이 가장 무해하다고 제시했던 소재에 대한 반동으로서, 그리고 폐가 숨쉴 수 없다면 적어도 피부는 숨쉴 수 있도록.)',
     //4
-    '인터넷에서 만난 c는 한 사람에 대해 오갈 수 있는 이야기에는 양이 정해져 있다고 했다. 한 사람에 대해 오갈 수 있는 이야기가 안개의 무리나 발효차를 떠다니는 배양균 덩어리같은 형태로 존재한다고 믿을 때, 이들은 늘어날수록 늘어나거나 줄어들수록 줄어드는 순환 방식에 대해 무지하다. 만들어지고 사라지는 이야기의 양은 항상 동일하다. 그런 곳의 모습을 머릿속으로 상상해보자면 저녁의 길거리에서는 목소리보다 식기들끼리 부딪히는 소리가 크게 들리고 그들이 쓰는 말의 곡조는 새소리와 비슷하여 배경음악처럼 드문드문하다.  ',
+    '인터넷에서 만난 c는 한 사람에 대해 오갈 수 있는 이야기에는 양이 정해져 있다고 했다. 한 사람에 대해 오갈 수 있는 이야기가 안개의 무리나 발효차를 떠다니는 배양균 덩어리같은 형태로 존재한다고 믿을 때, 이들은 늘어날수록 늘어나거나 줄어들수록 줄어드는 순환 방식에 대해 무지하다. 만들어지고 사라지는 이야기의 양은 항상 동일하다. <br>그런 곳의 모습을 머릿속으로 상상해보자면 저녁의 길거리에서는 목소리보다 식기들이 부딪히는 소리가 크게 들리고 그들이 쓰는 말의 곡조는 새소리와 비슷하여 배경음악처럼 드문드문하다.  ',
     //5
     '한 사람에 대해 오갈 수 있는 이야기는 발화되는 순간 그곳에 자신이 있는지 없는지에 따라 두 종류의 물질 사이를 오간다. 두 물질은—마치 오존과 햇빛처럼—하나가 다른 것을 보호하거나 변화시킬 수 있다. 모르는 사람들에 대해 생각하거나 잠재된 미래를 떠올리느라 잠을 못 이루는 사람 (푸른빛 자외선이 대부분이고 그것을 막아주는 투명한 오존층이 얇게 깔려 있다). 낮의 물리와 가족의 활기에 몸을 맡기는 사람 (대기중 오존은 강한 햇빛과 반응하여 발생).  ',
     //6
@@ -323,7 +486,7 @@ setInterval(function(){
     '나는 c가 말한 세계 그중에서도 말하지 않는 편이 아름답다고 여겨지는 군집에 들어가고 싶다. 온 방이 밤하늘의 색에 집어 삼켜진 시간에만 지내고 싶다. 나의 생존 감각을 그들의 기준에 맞게 교정한다. 태양인의 기질을 져버려야 한다. 깨어있는 동안에는 그 시간 사이사이에 끼울 거짓말을 저미는 일에 공들여야 한다. 이치에 맞게 행동하려는 태양인의 관성을 져버려야 한다. 굽거나 볶은 음식을 먹지 않을 것. 식은 국물에 비리고 말캉한 덩어리들이 떠다니는 음식이나 오랜 시간동안 재워 신맛이 나는 절임류를 만들어 먹을 것. 골반을 깎아서 비늘같은 몸을 만들 것.',
 
     //9
-    '좋은 것들을 만들어내기를 원했던 게 아니라<br>어떻게 하면 좋은 것들을 느낄 방법을 만들 수 있는지요,<br>슬픈 것을 보고 슬픔을 느끼고 행복한 것을 보고 끔찍함을 느끼기 위해 애써요. <br>자전거 대신 자전거 거치대의 바퀴 음각을 만드는 사람이요.<br><br><br>너그럽게<br> 내숭이 허용되었을 때<br>이제는 <br>징그러운 말들<br>호기롭고 게으르고 불충분한 단어들만이 내 곁을 지킨다네<br>미친듯이 나를 변호해야 한다',
+    '좋은 것들을 만들어내기를 원했던 게 아니라<br>어떻게 하면 좋은 것들을 느낄 방법을 만들 수 있는지요,<br>슬픈 것을 보고 슬픔을 느끼고 맑은 것을 보고 끔찍함을 느끼기 위해 애써요. <br>자전거 대신 자전거 거치대의 바퀴 음각을 만드는 사람이요.',
 
      //10
      '깨어 있는 시간에 가장 중요한 일은 꿈 일기를 쓸 때—만약 이것조차 쓸 수 없다면 일어나려 하지 않았을 것이다—꿈에서 일어나지도 않은 내용을 서술하는 문장들을 붙이는 일이다. 어차피 꿈은 금방 까먹어서 며칠만 지나고 읽어도 어디가 진짜 꿈인지 거짓말인지 분간하지 못하게 된다. 그렇게 되면 일기는 꿈도 아니고 현실도 아니고 제 3의 현장에 대한 서술이 된다.',
@@ -352,6 +515,35 @@ setInterval(function(){
    
      $("#text_select div").each(function(){
    if(j%2==0){
+    $('.subject').toggleClass('subject_en',1000); 
+      $('.adjective').toggleClass('adjective_en',1000); 
+      $('.object').toggleClass('object_en',1000); 
+      $('.adverb').toggleClass('adverb_en',1000);
+      $('.verb').toggleClass('verb_en',1000);
+      $(".verb1").toggleClass('verb1_en',1000);
+       $('.subject2').toggleClass('subject2_en',1000);
+      $('.verb2').toggleClass('verb2_en',1000);
+      $('.adjective2').toggleClass('adjective2_en',1000); 
+      $('.object2').toggleClass('object2_en',1000); 
+      $('.adverb2').toggleClass('adverb2_en',1000);
+      $('.ho2').toggleClass('ho2_en',1000);
+      $('.emotion2').toggleClass('emotion2_en',1000);
+
+      $('.subject').toggleClass('subject_ko',1000);
+      $('.verb').toggleClass('verb_ko',1000);
+      $('.adjective').toggleClass('adjective_ko',1000); 
+      $('.object').toggleClass('object_ko',1000); 
+      $('.adverb').toggleClass('adverb_ko',1000); 
+      $(".verb1").toggleClass('verb1_ko',1000);
+      $('.emotion').toggleClass('emotion_ko',1000);
+      $('.subject2').toggleClass('subject2_ko',1000);
+      $('.verb2').toggleClass('verb2_ko',1000);
+      $('.adjective2').toggleClass('adjective2_ko',1000); 
+      $('.object2').toggleClass('object2_ko',1000); 
+      $('.adverb2').toggleClass('adverb2_ko',1000);
+      $('.ho2').toggleClass('ho2_ko',1000);
+      $('.emotion2').toggleClass('emotion2_ko',1000);
+
     $('#text_scroll_content').empty();
       $('#text_scroll_content').append(sentences[k-1]);
     $(this).hover(function(){
@@ -370,6 +562,35 @@ setInterval(function(){
   }); 
   }
   else{
+    $('.subject').toggleClass('subject_en',1000); 
+      $('.adjective').toggleClass('adjective_en',1000); 
+      $('.object').toggleClass('object_en',1000); 
+      $('.adverb').toggleClass('adverb_en',1000);
+      $('.verb').toggleClass('verb_en',1000);
+      $(".verb1").toggleClass('verb1_en',1000);
+       $('.subject2').toggleClass('subject2_en',1000);
+      $('.verb2').toggleClass('verb2_en',1000);
+      $('.adjective2').toggleClass('adjective2_en',1000); 
+      $('.object2').toggleClass('object2_en',1000); 
+      $('.adverb2').toggleClass('adverb2_en',1000);
+      $('.ho2').toggleClass('ho2_en',1000);
+      $('.emotion2').toggleClass('emotion2_en',1000);
+
+      $('.subject').toggleClass('subject_ko',1000);
+      $('.verb').toggleClass('verb_ko',1000);
+      $('.adjective').toggleClass('adjective_ko',1000); 
+      $('.object').toggleClass('object_ko',1000); 
+      $('.adverb').toggleClass('adverb_ko',1000); 
+      $(".verb1").toggleClass('verb1_ko',1000);
+      $('.emotion').toggleClass('emotion_ko',1000);
+      $('.subject2').toggleClass('subject2_ko',1000);
+      $('.verb2').toggleClass('verb2_ko',1000);
+      $('.adjective2').toggleClass('adjective2_ko',1000); 
+      $('.object2').toggleClass('object2_ko',1000); 
+      $('.adverb2').toggleClass('adverb2_ko',1000);
+      $('.ho2').toggleClass('ho2_ko',1000);
+      $('.emotion2').toggleClass('emotion2_ko',1000);
+
     $('#text_scroll_content').empty();
       $('#text_scroll_content').append(sentencesen[k-1]);
     $(this).hover(function(){
