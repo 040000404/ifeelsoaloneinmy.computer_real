@@ -29,19 +29,44 @@
       <div id='mags' class="dayimage"> 
         
         <div class="item item_edges item_edges2 item_day item_edges_day item_edges2_day links daylink dream_day" id="dream"  onclick="location.href = 'dream20210628.html';"></div>
-        <div class="item item_edges2 item_day item_edges2_day null"></div>
+        <div class="item item_edges2 item_day item_edges2_day null room_top_day" id="room_top"></div>
         <div class="item item_edges2 item_day item_edges2_day links daylink puzzle_day" id="puzzle"  onclick='location.href = "poem.html";'></div>
         
-        <div class="item item_edges item_day item_edges_day"></div>
-        <div class="item item_day daystage" id="stage">
-           <div id="sentence"></div>
+        <div class="item item_edges item_day item_edges_day room_left_day null" id="room_left"></div>
+         <div class="item item_day daystage" id="stage">
+           <div id="sentence" class="sentence_day"></div>
+            <div id="column_index" class="puzzle_index">
+            <span>ㄱ</span>
+            <span>ㄴ</span>
+            <span>ㄷ</span>
+            <span>ㄹ</span>
+            <span>ㅁ</span>
+            <span>ㅂ</span>
+            <span>ㅅ</span>
+            <span>ㅇ</span>
+            <span>ㅈ</span>
+            <span>ㅊ</span>
+          </div>
         </div>
-        <div class="item item_day null"></div>
+        <div class="item item_day null room_right_day"  id="room_right"></div>
 
-        <div class="item item_edges item_day item_edges_day links daylink car_day" id="car"  onclick="location.href = 'car.html';">
+        <div class="item item_edges item_day item_edges_day links daylink car_day" id="row_index_grid"  onclick="location.href = 'car.html';">
+          <div id="row_index" class="puzzle_index">
+            <span>a&nbsp;</span>
+            <span>b&nbsp;</span>
+            <span>c&nbsp;</span>
+            <span>d&nbsp;</span>
+            <span>e&nbsp;</span>
+            <span>f&nbsp;</span>
+            <span>g&nbsp;</span>
+            <span>h&nbsp;</span>
+            <span>i&nbsp;</span>
+            <span>j&nbsp;</span>
+          </div>
            
         </div>
-        <div class="item item_day null">
+        <div class="item item_day null text_puzzle_day"  id="text_puzzle" >
+          
         </div>
         <div class="item item_day links daylink shower_day" id="shower" onclick='location.href = "shower.html";'>
           
@@ -55,6 +80,7 @@
           <button id="main_en" class="daylang"type="button"> </button> 
         </div> 
       </default>
+
 
     </layer>
  <script>   
@@ -79,14 +105,20 @@
       $(".links").toggleClass('nightlink',1000); 
       $("#dream").toggleClass('dream_night',1000); 
       $("#puzzle").toggleClass('puzzle_night',1000); 
-      $("#car").toggleClass('car_night',1000); 
+      $("#row_index_grid").toggleClass('car_night',1000); 
       $("#shower").toggleClass('shower_night',1000); 
       $("#callme").toggleClass('callme_night',1000); 
       $("#stage").toggleClass('nightstage',1000); 
       $(".item").toggleClass('item_day',1000); 
-      $(".item_edges").toggleClass('item_edges_day',1000); 
-      $(".item_edges2").toggleClass('item_edges2_day',1000); 
-      $(".item_edges3").toggleClass('item_edges3_day',1000); 
+        $(".item_edges").toggleClass('item_edges_night',1000); 
+      $(".item_edges2").toggleClass('item_edges2_night',1000); 
+      $(".item_edges3").toggleClass('item_edges3_night',1000);
+      $("#sentence").toggleClass('sentence_night',1000);
+
+      $("#text_puzzle").toggleClass('text_puzzle_night',1000);  
+      $("#room_left").toggleClass('room_left_night',1000);
+       $("#room_top").toggleClass('room_top_night',1000);  
+       $("#room_right").toggleClass('room_right_night',1000);    
 
     }
     else{
@@ -100,14 +132,20 @@
       $(".links").toggleClass('daylink',1000); 
       $("#dream").toggleClass('dream_day',1000); 
       $("#puzzle").toggleClass('puzzle_day',1000); 
-      $("#car").toggleClass('car_day',1000); 
+      $("#row_index_grid").toggleClass('car_day',1000); 
       $("#shower").toggleClass('shower_day',1000); 
       $("#callme").toggleClass('callme_day',1000); 
       $("#stage").toggleClass('daystage',1000); 
+      $(".item_edges").toggleClass('item_edges_day',1000); 
+      $(".item_edges2").toggleClass('item_edges2_day',1000); 
+      $(".item_edges3").toggleClass('item_edges3_day',1000);
       $(".item").toggleClass('item_night',1000); 
-      $(".item_edges").toggleClass('item_edges_night',1000); 
-      $(".item_edges2").toggleClass('item_edges2_night',1000); 
-      $(".item_edges3").toggleClass('item_edges3_night',1000); 
+     $("#sentence").toggleClass('sentence_day',1000);
+      $("#text_puzzle").toggleClass('text_puzzle_day',1000);  
+       $("#room_left").toggleClass('room_left_day',1000);
+       $("#room_top").toggleClass('room_top_day',1000);  
+       $("#room_right").toggleClass('room_right_day',1000);    
+
     } 
   });
   window.onpageshow = function(event) {
@@ -118,7 +156,7 @@
 };
   var i = 0;
     $('#sentence').empty();
-      $('#car').hover(function(){
+      $('#row_index_grid').hover(function(){
         $('#sentence').text('saver');
       });
       $('#shower').hover(function(){
@@ -137,7 +175,7 @@
     i = i + 1;
     if(i%2==0){
       $('#sentence').empty();
-      $('#car').hover(function(){
+      $('#row_index_grid').hover(function(){
         $('#sentence').text('saver');
       });
       $('#shower').hover(function(){
@@ -156,7 +194,7 @@
     } 
     else{
       $('#sentence').empty();
-      $('#car').hover(function(){
+      $('#row_index_grid').hover(function(){
         $('#sentence').text('세이버');
       });
       $('#shower').hover(function(){
@@ -175,6 +213,208 @@
     };
 
   }); 
+
+// var sentences = [
+//    '',
+//    'a',
+//    '',
+//    '',
+//    '',
+//    's',
+//    '',
+//    '',
+//    '',
+//    '',
+//    '',
+//    '',
+//    'd',
+//    '',
+//    'd',
+//    'd',
+//    'd',
+//    '',
+//    '',
+//    '',
+//    'e',
+//    '',
+//    '',
+//    'e',
+//    'e',
+//    'e',
+//     'e',
+//     'e',
+//    '',
+//    '',
+//    '', 
+//    'f',
+//    '',
+//     'f',
+//    'f',
+//    'f',
+//    'f',
+//    'f',
+//    'f',
+//    '',
+//     '',
+//     '',
+//     'h',
+//   'h',
+//   'h',
+//   'h',
+//   'h',
+//   'h',
+//   'h',
+//   'h',
+//   'i',
+//   '',
+//   'i',
+//   'i',
+//   'i',
+//   'i',
+//   'i',
+//   'i',
+//   'i',
+//   'i',
+//   '',
+//   'j',
+//   '',
+//   '',
+//   'j',
+//   'j',
+//   'j',
+//   'j',
+//   'j',
+//   '',
+//   '',
+//   '',
+//   '',
+//   'k',
+//   '',
+//   'k',
+//   'k',
+//   'k',
+//   '',
+//   '',
+//   '',
+//   'l',
+//   '',
+//   '',
+//   'l',
+//   '',
+//   'l',
+//   '',
+//   '',
+//   '',
+//   '',
+//   '',
+//   '',
+//   'o',
+//   '',
+//   '',
+//   '',
+//   '',
+//   '',
+//   ''
+// ];
+var p_content = "";
+for(i=0;i<100;i++){
+  var j = parseInt(i+1); 
+  p_content += '<div id="' + j + '"class="puzzle_piece">'+'</div>'; 
+} ;
+$('#text_puzzle').append(p_content);
+$("#text_puzzle div").each(function(){
+    var j = parseInt(this.id);
+    if(j%10==0){
+      $(this).css({
+        'border-bottom':'1px solid rgba(244,244,244,0.1)',
+        'backdrop-filter':'blur(1px)'
+      });
+    }else{
+    $(this).css({
+      'border-right':'1px solid rgba(244,244,244,0.1)',
+      'border-bottom':'1px solid rgba(244,244,244,0.1)',
+      'backdrop-filter':'blur(1px)'
+
+  });}
+    $(this).hover(function(){
+      var i = parseInt(this.id);
+       // $('#sentence').text(sentences[i-1]); 
+        if(i==2 || i==13 || i==24 || i ==35 || i == 46 || i==21 || i==32 || i ==43 || i==54 || i==65 || i ==51 || i==62 || i ==74 || i==85){
+          $(this).css({
+          'background':'rgba(232,74,38,0.8)'
+        });
+        }
+        if(i==6 || i == 15 || i ==16 || i ==26 || i == 28 || i == 49 || i == 50 || i ==57 || i ==58 || i ==59 || i == 60 || i == 69){
+          $(this).css({
+          'background':'rgba(89,117,173,0.8)'
+        });
+        }
+        if(i==87 || i == 78 || i ==77 || i ==68 || i == 67 || i == 66){
+          $(this).css({
+          'background':'rgba(148,189,200,0.8)'
+        });
+        }
+        if(i==94 || i == 82 || i == 37 || i == 38 || i ==48 ){
+          $(this).css({
+          'background':'rgba(220,217,152,0.8)'
+        });
+        }
+        if(i==17 || i == 76 ){
+          $(this).css({
+          'background':'rgba(238,177,194,0.8)'
+        });
+        }
+        if(i==47){
+          $(this).css({
+          'background':'rgba(107,198,68,0.8)'
+        });
+        }
+        if(i==34 || i ==25 || i ==36 || i ==44 || i ==45 || i==53 || i ==55 || i ==56 ){
+          $(this).css({
+          'background':'rgba(222,208,201,0.8)'
+        });
+        }
+        if(i==27 ){
+          $(this).css({
+          'background':'rgba(149,152,199,0.8)'
+        });
+        }
+        if(i==39 ){
+          $(this).css({
+          'background':'rgba(98,57,96,0.8)'
+        });
+        }
+       // if(sentences[i-1]!=''){ 
+       
+       //  $('.sentence_day').css({
+       //    'font-size':'8pt',
+       //    'color':'black',
+       //    'font-style':'normal'
+       //  });
+     
+       
+       //  $('.sentence_night').css({
+       //    'font-size':'8pt',
+       //    'color':'white',
+       //    'font-style':'normal'
+       //  });
+
+      
+       // }
+
+       
+  });  
+  });
+    $('.links').hover(
+      function(){
+         $('#sentence').css({
+         'font-style': 'italic',
+          'font-size': '11pt' ,
+          'color': 'blue' 
+        })
+      }
+      );
+         
  
 </script>
 </body>

@@ -21,7 +21,10 @@ html, body{
   height:  100%;
   /*background-color: *//*RGB(213, 210, 210); *//*#d4ccc9;*/
   background-color: #cbcbcb;
-
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;  
   overflow: hidden;
 }
 
@@ -70,7 +73,7 @@ html, body{
 	border-radius: 9%;
 	border: 1px solid darkgray;
 	border-bottom: transparent;
-	background-color: transparent;
+	background-color: rgba(255,255,255,0.4);
 	opacity: 1;
 	z-index: -1;
 }
@@ -90,7 +93,7 @@ html, body{
 	border-radius: 9%;
 	border: 1px solid darkgray;
 	border-bottom: transparent;
-	background-color: transparent;
+	background-color: rgba(255,255,255,0.4);
 	opacity: 1;
 	z-index: -1;
 }
@@ -698,9 +701,28 @@ layer{
 	height: calc(483px - 178px - 18px - 20px);
 	overflow-y: scroll;
 	overflow-x: hidden; 
+	scrollbar-width:thin;
+	   scrollbar-color: #aaa #eee;
 
  }
-#text_scroll p{
+ #text_scroll::-webkit-scrollbar {
+  width: 3px;
+}
+ #text_scroll::-webkit-scrollbar-track {
+  background: #eee; 
+}
+ 
+/* Handle */
+ #text_scroll::-webkit-scrollbar-thumb {
+  background: #aaa; 
+}
+
+/* Handle on hover */
+ #text_scroll::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}
+ 
+#text_scroll p:not(#end){
 	font-size: 8pt;
 	line-height: 16pt;
 	font-family: gulim;
@@ -721,12 +743,16 @@ layer{
 	background: url('bonbon.png');
 	background-size: cover;
 background-clip: padding-box;
-
 	border-style: double;
 	border-color: #bbbaa7;
- 
-	margin: 10px 0px;
-}
+ font-family: Times;
+	color: #e9e9eb;
+	font-style: italic;
+	margin-top: 10px;
+	text-align: center;
+	vertical-align: middle;
+line-height: 60px;
+} 
 .easter_day{
 	box-shadow: 0 0 3px 3px #aaa inset;
 
@@ -738,6 +764,7 @@ background-clip: padding-box;
 #easter:hover{
 	cursor: pointer;
 	border-color: #888;
+	color: #cccba7;
  
 }
 #mags{
@@ -1114,13 +1141,12 @@ ko{
 	position: absolute;
 	bottom: 50px;
 	right: 19px;
-	/*background-color: black;*/
-	opacity: 0.7;
-	background-image: url('moon.jpeg');
-	background-position: center;
+	background-color: black;
+	opacity: 1;
+ 	background-position: center;
 	width: calc(284px / 880 * 483);
 	height:calc(330px / 880 * 483);
-	box-shadow: 0 0 5px 3px white inset,0 0 5px 3px white;
+	box-shadow: 0 0 5px 6px white inset;
 
 }	
 #callmebutton{

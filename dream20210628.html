@@ -67,7 +67,7 @@ function move() {
         percent = percent -0.01;
         elem.style.filter = "grayscale(" + percent + "%)";
 
-        if ($('.subject_ko').is(':empty') && $('.subject2_ko').is(':empty') &&  percent >90){
+        if (percent >90){
           $('#loading').show();
           $('load').hide();
         } else{

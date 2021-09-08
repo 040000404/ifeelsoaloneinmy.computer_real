@@ -13,7 +13,14 @@
  
 </head>
 <body>
+  
   <mobile>
+    <frame_top>
+    <frame_top_left></frame_top_left>
+    <frame_top_right></frame_top_right>
+  </frame_top>
+    <frame_bottom>
+      <frame_bottom_left>
     <sky> 
       <stars></stars>
       <numbertocall></numbertocall>
@@ -48,51 +55,80 @@
             <button type="button" id="makecall" class="number2">✆</button>
             <button type="button" id="remove" class="number3">←</button>
           </div>
-          </div>
-          <div id="callbutton">
-            <button type="button" >&nbsp;•&nbsp;do not let your words reign you&nbsp;•&nbsp;</button>
-          </div>
+          </div> 
     </beach>
-  </mobile>
+  </frame_bottom_left>
+  <frame_bottom_right></frame_bottom_right>
+</frame_bottom>
+</mobile>
 	<layer>
     
     <div id="index_loading">
         <div id="callbutton">
             <button type="button">
-            &nbsp;•&nbsp;do not let your words reign you&nbsp;•&nbsp;</button>
+            &nbsp;•&nbsp;follow the aesthetes and never stop admiring them&nbsp;•&nbsp;<br>
+            <p>
+          탐미주의자들을 따라 걸으며 그들을 동경하는 것을 멈추지 않는다
+        </p>
+          </button>
         </div>
         <div id="myProgress">
           <div id="myBar"></div>
         </div>
     </div>
-	<default>
+	<default> 
     
-		<div class="content day">
+    <div class="content day">
       
-			<div id="lamp" class="daylamp null">
-				<label class="switch">
-  					<input type="checkbox">
-  					<span class="slider dayswitch"></span>
-				</label>
-			</div>
-			 
-	 		
-	 		<div id='mags' class="dayimage"> 
+      <div id="lamp" class="daylamp null">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider dayswitch"></span>
+        </label>
+      </div>
+       
+      
+      <div id='mags' class="dayimage"> 
         
         <div class="item item_edges item_edges2 item_day item_edges_day item_edges2_day links daylink dream_day" id="dream"  onclick="location.href = 'dream20210628.html';"></div>
-        <div class="item item_edges2 item_day item_edges2_day null"></div>
+        <div class="item item_edges2 item_day item_edges2_day null room_top_day" id="room_top"></div>
         <div class="item item_edges2 item_day item_edges2_day links daylink puzzle_day" id="puzzle"  onclick='location.href = "poem.html";'></div>
         
-        <div class="item item_edges item_day item_edges_day"></div>
-        <div class="item item_day daystage" id="stage">
-           <div id="sentence"></div>
+        <div class="item item_edges item_day item_edges_day room_left_day null" id="room_left"></div>
+         <div class="item item_day daystage" id="stage">
+           <div id="sentence" class="sentence_day"></div>
+            <div id="column_index" class="puzzle_index">
+            <span>ㄱ</span>
+            <span>ㄴ</span>
+            <span>ㄷ</span>
+            <span>ㄹ</span>
+            <span>ㅁ</span>
+            <span>ㅂ</span>
+            <span>ㅅ</span>
+            <span>ㅇ</span>
+            <span>ㅈ</span>
+            <span>ㅊ</span>
+          </div>
         </div>
-        <div class="item item_day null"></div>
+        <div class="item item_day null room_right_day"  id="room_right"></div>
 
-        <div class="item item_edges item_day item_edges_day links daylink car_day" id="car"  onclick="location.href = 'car.html';">
+        <div class="item item_edges item_day item_edges_day links daylink car_day" id="row_index_grid"  onclick="location.href = 'car.html';">
+          <div id="row_index" class="puzzle_index">
+            <span>a&nbsp;</span>
+            <span>b&nbsp;</span>
+            <span>c&nbsp;</span>
+            <span>d&nbsp;</span>
+            <span>e&nbsp;</span>
+            <span>f&nbsp;</span>
+            <span>g&nbsp;</span>
+            <span>h&nbsp;</span>
+            <span>i&nbsp;</span>
+            <span>j&nbsp;</span>
+          </div>
            
         </div>
-        <div class="item item_day null">
+        <div class="item item_day null text_puzzle_day"  id="text_puzzle" >
+          
         </div>
         <div class="item item_day links daylink shower_day" id="shower" onclick='location.href = "shower.html";'>
           
@@ -101,12 +137,11 @@
         <div class="item_edges3 item_edges3_day"></div>
         <div class="item item_day"></div>
       </div> 
-				</div>
+        </div>
         <div  id="main_lang">
           <button id="main_en" class="daylang"type="button"> </button> 
         </div> 
-			</default>
-
+      </default> 
 		</layer>
  <script>  
   //load
@@ -226,65 +261,8 @@
     if(chk) {$("input").prop("checked", false).attr("checked", false).removeAttr("checked");}
     }
 };
-  var i = 0;
-    $('#sentence').empty();
-      $('#car').hover(function(){
-        $('#sentence').text('saver');
-      });
-      $('#shower').hover(function(){
-        $('#sentence').text('외국에서 샤워하기');
-      }); 
-      $('#dream').hover(function(){
-        $('#sentence').text('꿈');
-      });
-      $('#puzzle').hover(function(){
-        $('#sentence').text('puzzle');
-      });
-      $('.null').hover(function(){
-        $('#sentence').text('');
-      });
-  $('#main_lang').click(function(){
-    i = i + 1;
-    if(i%2==0){
-      $('#sentence').empty();
-      $('#car').hover(function(){
-        $('#sentence').text('saver');
-      });
-      $('#shower').hover(function(){
-        $('#sentence').text('외국에서 샤워하기');
-      }); 
-      $('#dream').hover(function(){
-        $('#sentence').text('꿈');
-      });
-      $('#puzzle').hover(function(){
-        $('#sentence').text('puzzle');
-      });
-      $('.null').hover(function(){
-        $('#sentence').text('');
-      });
-       
-    } 
-    else{
-      $('#sentence').empty();
-      $('#car').hover(function(){
-        $('#sentence').text('세이버');
-      });
-      $('#shower').hover(function(){
-        $('#sentence').text('shower in a foreign country');
-      });
-      $('#dream').hover(function(){
-        $('#sentence').text('dream');
-      });
-      $('#puzzle').hover(function(){
-        $('#sentence').text('퍼즐');
-      });
-      $('.null').hover(function(){
-        $('#sentence').text('');
-      });
-     
-    };
 
-  }); 
+ 
  
 </script>
 </body>
