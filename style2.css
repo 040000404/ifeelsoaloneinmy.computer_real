@@ -667,10 +667,10 @@ input:checked + .slider:before {
 	frame_bottom{
 		display: grid;
 		grid-template-columns: auto 15px;
-		height: calc(100vh - 15px);
+		height: calc(var(--vh, 1vh) * 100 - 15px);
 	}
 	frame_bottom_left{
-		height: calc(100vh - 15px);
+		height: calc(var(--vh, 1vh) * 100 - 15px);
 		display: grid;
 		grid-template-rows: 3fr 2fr;
 	}
